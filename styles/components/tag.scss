@@ -1,0 +1,23 @@
+@import "../utils/variables";
+
+.tag {
+  width: fit-content;
+  height: fit-content;
+  padding: 1px 8px 1px 8px;
+  margin-right: 0.5em;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  color: $color-tertiary;
+  &:hover {
+    background-color: $bg-color-primary;
+    color: white;
+    cursor: pointer;
+  }
+  &:focus {
+    background-color: $bg-color-primary;
+    color: white;
+    cursor: pointer;
+  }
+}

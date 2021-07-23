@@ -1,0 +1,12 @@
+@import "../utils/variables";
+
+.header-content {
+  position: sticky;
+  left: 45%;
+  right: 45%;
+  text-decoration: none;
+  color: black;
+  border-radius: 5px;
+  background-color: $bg-color-secondary;
+  padding: 2px 8px 2px 8px;
+}
