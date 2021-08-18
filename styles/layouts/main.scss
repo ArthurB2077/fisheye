@@ -1,0 +1,8 @@
+.main-photographers-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+    .main-photographer {
+      flex-basis: 33%;
+    }
+}

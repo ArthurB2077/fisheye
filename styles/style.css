@@ -22,7 +22,16 @@ body {
   color: #901C1C;
 }
 
-.tag {
+.main-photographers-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.main-photographers-list .main-photographer {
+  flex-basis: 33%;
+}
+
+.tag, .tag-nav {
   width: fit-content;
   height: fit-content;
   padding: 1px 8px 1px 8px;
@@ -33,14 +42,23 @@ body {
   justify-content: center;
   color: #901C1C;
 }
-.tag:hover {
-  background-color: #901C1C;
-  color: white;
+.tag:hover, .tag-nav:hover {
   cursor: pointer;
 }
-.tag:focus {
+
+.tag-selected {
+  width: fit-content;
+  height: fit-content;
+  padding: 1px 8px 1px 8px;
+  margin-right: 0.5em;
+  border: 0.5px solid #C4C4C4;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
   background-color: #901C1C;
   color: white;
+}
+.tag-selected:hover {
   cursor: pointer;
 }
 
