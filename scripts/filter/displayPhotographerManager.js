@@ -1,6 +1,6 @@
 const tags = document.getElementsByClassName('tag-nav')
 const selectedTags = document.getElementsByClassName('tag-selected')
-const photographers = document.getElementsByClassName('main-photographer')
+const photographers = document.getElementsByClassName('main-photographers')
 
 class DisplayPhotographerManager {
   constructor () {
@@ -16,7 +16,7 @@ class DisplayPhotographerManager {
               })
               pt.querySelectorAll('ul > li > a').forEach(tg => {
                 Array.from(selectedTags).forEach(st => {
-                  if (tg.innerHTML === st.innerHTML.toLowerCase()) {
+                  if ((tg.innerHTML === st.innerHTML.toLowerCase()) || (tg.innerHTML === st.innerHTML.toLowerCase() + 's')) {
                     pt.removeAttribute('style')
                   }
                 })

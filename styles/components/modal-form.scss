@@ -1,0 +1,49 @@
+@import "../utils/variables";
+
+.bg-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: $color-secondary;
+  .modal-form {
+    background: $bg-color-secondary;
+    margin: 1% auto;
+    padding: 2em;
+    border-radius: 5px;
+    max-width: 500px;
+    h2 {
+      font-size: 64px;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 0.5em;
+    }
+    .form-fields {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+      label {
+        color: $color-secondary;
+        font-size: 36px;
+        font-weight: 400;
+      }
+      input {
+        height: 5em;
+        border-radius: 5px;
+      }
+      #message {
+        height: 10em;
+      }
+    }
+    .form-submit{
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+
