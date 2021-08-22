@@ -53,6 +53,11 @@ class PhotographerFactory {
         .then(photographersData => {
           const photographers = []
           const factory = new DOMElementFactory()
+          // eslint-disable-next-line no-unused-expressions
+          const insertTitleForm = () => {
+            document.getElementById('photographer-form-name').innerHTML = `Contactez-moi <br> ${photographersData.name}`
+          }
+          insertTitleForm()
 
           const ul1 = factory.createDOMElement('ul', {})
           for (let i = 0; i < photographersData.tags.length; i++) {
@@ -71,7 +76,7 @@ class PhotographerFactory {
           })
           const a1 = factory.createDOMElement('a', {}, img1)
 
-          const but = factory.createDOMElement('button', { class: 'main-contact' }, 'Contactez-moi')
+          const but = factory.createDOMElement('button', { id: 'contact', class: 'main-contact', onclick: 'openModal();' }, 'Contactez-moi')
 
           const div1 = factory.createDOMElement('div', { class: 'descritpion' }, p1, ul1)
           const div2 = factory.createDOMElement('div', { class: 'container' }, div1, but)

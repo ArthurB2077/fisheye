@@ -222,6 +222,7 @@ body {
   float: left;
   margin-left: 1em;
   margin-top: 0.5em;
+  cursor: pointer;
 }
 
 .button {
@@ -233,6 +234,7 @@ body {
   border: none;
   border-radius: 5px;
   width: 10em;
+  cursor: pointer;
 }
 
 .bg-modal {
@@ -244,7 +246,7 @@ body {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: #525252;
+  background-color: #fff;
 }
 .bg-modal .modal-form {
   background: #DB8876;
@@ -254,10 +256,35 @@ body {
   max-width: 500px;
 }
 .bg-modal .modal-form h2 {
-  font-size: 64px;
+  font-size: 50px;
   font-weight: 400;
   margin-top: 0;
   margin-bottom: 0.5em;
+}
+.bg-modal .modal-form .close {
+  position: absolute;
+  top: 3%;
+  right: 28%;
+  width: 32px;
+  height: 32px;
+  opacity: 1;
+  cursor: pointer;
+  transform: scale(0.7);
+}
+.bg-modal .modal-form .close:before,
+.bg-modal .modal-form .close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 3px;
+  background-color: #fff;
+}
+.bg-modal .modal-form .close:before {
+  transform: rotate(45deg);
+}
+.bg-modal .modal-form .close:after {
+  transform: rotate(-45deg);
 }
 .bg-modal .modal-form .form-fields {
   display: flex;
@@ -270,11 +297,13 @@ body {
   font-weight: 400;
 }
 .bg-modal .modal-form .form-fields input {
-  height: 5em;
   border-radius: 5px;
+  font-size: 40px;
 }
-.bg-modal .modal-form .form-fields #message {
-  height: 10em;
+.bg-modal .modal-form .form-fields textarea {
+  border-radius: 5px;
+  height: 5em;
+  font-size: 40px;
 }
 .bg-modal .modal-form .form-submit {
   margin-top: 2em;
