@@ -81,7 +81,7 @@ class PhotographerFactory {
           const div1 = factory.createDOMElement('div', { class: 'descritpion' }, p1, ul1)
           const div2 = factory.createDOMElement('div', { class: 'container' }, div1, but)
 
-          photographers.push(factory.createDOMElement('div', { class: 'main-photographer' }, a1, div2))
+          photographers.push(factory.createDOMElement('div', { id: `${photographersData.id}`, class: 'main-photographer' }, a1, div2))
           photographers.forEach(photographer => {
             Array.from(document.getElementsByClassName('main-photographer-description')).forEach(el => el.appendChild(photographer))
           })

@@ -25,6 +25,6 @@ window.addEventListener('scroll', (event) => {
   }
 })
 
-document.getElementById('header-content').addEventListener('click', (event) => {
+document.getElementById('header-content').addEventListener('click', () => {
   window.scrollY = 0
 })
