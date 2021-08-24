@@ -6,9 +6,16 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2em;
-  @include media-queries(mobile) {
+  @include media-queries(tablette) {
     margin: auto;
     display: block;
+    padding: 3rem;
+  }
+  @include media-queries(mobile) {
+    margin: 3rem auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
+
   }
   a {
     display: flex;
@@ -27,9 +34,17 @@
       font-size: 2.25em;
       margin-bottom: 0;
       margin-top: 0.5em;
+      @include media-queries(tablette) {
+        white-space: nowrap;
+      }
       @include media-queries(mobile) {
-        flex-wrap: nowrap;
-        display: inline;
+        white-space: nowrap;
+        margin-right: 1em;
+        margin-left: 1em;
+      }
+      @include media-queries(mobile-sm) {
+        white-space: normal;
+        padding-left: 30px;
       }
     }
   }
@@ -68,6 +83,11 @@
     list-style: none;
     display: flex;
     padding: 0;
+    @include media-queries(mobile-sm) {
+      flex-wrap: wrap;
+      align-items: center;
+      margin: auto;
+    }
   }
 }
 
