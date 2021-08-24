@@ -16,57 +16,61 @@
     padding: 2em;
     border-radius: 5px;
     max-width: 500px;
-    h2 {
-      font-size: 50px;
-      font-weight: 400;
-      margin-top: 0;
-      margin-bottom: 0.5em;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        font-size: 50px;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 0.5em;
+      }
+      .close {
+        display: inline-flex;
+        position: relative;
+        width: 32px;
+        height: 32px;
+        opacity: 1;
+        cursor: pointer;
+      }
+      .close:before,
+      .close:after {
+        display: inline-flex;
+        position: relative;
+        content: " ";
+        height: 33px;
+        width: 3px;
+        background-color: #fff;
+      }
+      .close:before {
+        transform: rotate(45deg);
+      }
+      .close:after {
+        transform: rotate(-45deg);
+      }
     }
-    .close {
-      position: absolute;
-      top: 3%;
-      right: 28%;
-      width: 32px;
-      height: 32px;
-      opacity: 1;
-      cursor: pointer;
-      transform: scale(0.7);
-    }
-    .close:before,
-    .close:after {
-      position: absolute;
-      left: 15px;
-      content: " ";
-      height: 33px;
-      width: 3px;
-      background-color: #fff;
-    }
-    .close:before {
-      transform: rotate(45deg);
-    }
-    .close:after {
-      transform: rotate(-45deg);
-    }
+
     .form-fields {
       display: flex;
       flex-direction: column;
       margin-bottom: 1em;
       label {
         color: $color-secondary;
-        font-size: 36px;
+        font-size: 35px;
         font-weight: 400;
+        font-style: normal;
       }
       input {
         border-radius: 5px;
-        font-size: 40px;
+        font-size: 30px;
       }
       textarea {
         border-radius: 5px;
         height: 5em;
-        font-size: 40px;
+        font-size: 30px;
       }
     }
-    .form-submit{
+    .form-submit {
       margin-top: 2em;
       margin-bottom: 1em;
     }

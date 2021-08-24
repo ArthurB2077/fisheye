@@ -5,3 +5,6 @@ $color-tertiary:#901C1C;
 $bg-color-primary: #901C1C;
 $bg-color-secondary: #DB8876;
 $bg-color-tertiary: #FAFAFA;
+
+$breakpoints-min: (desktop: 1600px, tablette:500px,mobile: 390px, mobile-sm: 250px);
+$breakpoints-max: (desktop: 2200px, tablette:1599px, mobile: 499px, mobile-sm:389px);

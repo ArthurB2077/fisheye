@@ -1,9 +1,15 @@
 @import "../utils/variables";
+@import "../utils/mixins";
 
 .main-photographers{
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 2em;
+  @include media-queries(mobile) {
+    margin: auto;
+    display: block;
+  }
   a {
     display: flex;
     flex-direction: column;
@@ -21,6 +27,10 @@
       font-size: 2.25em;
       margin-bottom: 0;
       margin-top: 0.5em;
+      @include media-queries(mobile) {
+        flex-wrap: nowrap;
+        display: inline;
+      }
     }
   }
   p {

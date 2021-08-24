@@ -1,0 +1,7 @@
+@import "../utils/variables";
+
+@mixin media-queries ($device) {
+  @media all and (min-width: map-get($breakpoints-min, $device)) and (max-width: map-get($breakpoints-max, $device)) {
+    @content;
+  }
+}
