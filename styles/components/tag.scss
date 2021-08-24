@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   color: $color-tertiary;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
@@ -26,6 +27,7 @@
   justify-content: center;
   background-color: $bg-color-primary;
   color: white;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }

@@ -1,19 +1,6 @@
 @import "../utils/variables";
 @import "../utils/mixins";
 
-.header-content {
-  @include media-queries(mobile) {
-    display: none;
-  }
-  @include media-queries(tablette) {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    width: 10rem;
-    margin: auto;
-  }
-}
-
 .header-banner {
   display: flex;
   justify-content: space-evenly;
@@ -39,6 +26,9 @@
     }
     @include media-queries(mobile) {
       margin-top: 2rem;
+      svg {
+        width: 150px;
+      }
     }
   }
   nav {
@@ -55,12 +45,11 @@
       @include media-queries(tablette) {
         flex-wrap: wrap;
         align-items: center;
-        margin: auto;
       }
       @include media-queries(mobile) {
         flex-wrap: wrap;
         align-items: center;
-        margin: auto;
+        padding: 0;
       }
       @include media-queries(mobile-sm) {
         flex-direction: column;
@@ -83,9 +72,9 @@
     @include media-queries(mobile) {
       position: absolute;
       margin-top: 0;
-      left: 50%;
-      font-size: 25px;
-      top: 3rem;
+      left: 52%;
+      font-size: 20px;
+      top: 3.2rem;
     }
     @include media-queries(mobile-sm) {
       top: 6rem;

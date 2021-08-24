@@ -27,15 +27,15 @@ class PhotographerFactory {
 
             const img1 = factory.createDOMElement('img', {
               src: `../images/fishEye_photos/Sample%20Photos/Photographers%20ID%20Photos/${ptgf.portrait}`,
-              alt: ''
+              alt: `${ptgf.name}`
             })
             const h2 = factory.createDOMElement('h2', {}, ptgf.name)
-            const a1 = factory.createDOMElement('a', { id: ptgf._id, href: `./photographer.html?phot=${ptgf._id}` }, img1, h2)
+            const a1 = factory.createDOMElement('a', { id: ptgf._id, href: `./photographer.html?phot=${ptgf._id}`, role: 'link' }, img1, h2)
 
-            photographers.push(factory.createDOMElement('div', { class: 'main-photographers' }, a1, p1, ul1))
+            photographers.push(factory.createDOMElement('article', { class: 'main-photographers', role: 'article' }, a1, p1, ul1))
           })
           photographers.forEach(photographer => {
-            Array.from(document.getElementsByTagName('main')).forEach(el => el.appendChild(photographer))
+            Array.from(document.getElementsByTagName('section')).forEach(el => el.appendChild(photographer))
           })
         })
         .catch((error) => {
@@ -72,9 +72,9 @@ class PhotographerFactory {
 
           const img1 = factory.createDOMElement('img', {
             src: `../images/fishEye_photos/Sample%20Photos/Photographers%20ID%20Photos/${photographersData.portrait}`,
-            alt: ''
+            alt: `${photographersData.name}`
           })
-          const a1 = factory.createDOMElement('a', {}, img1)
+          const a1 = factory.createDOMElement('a', { role: 'link' }, img1)
 
           const but = factory.createDOMElement('button', { id: 'contact', class: 'main-contact', onclick: 'openModal();' }, 'Contactez-moi')
 

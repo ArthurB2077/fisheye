@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2em;
+  animation: fadein 2s;
   @include media-queries(tablette) {
     margin: auto;
     display: block;

@@ -1,9 +1,15 @@
 @import "../utils/variables";
+@import "../utils/mixins";
 
-.header-content {
-  position: sticky;
-  left: 45%;
-  right: 45%;
+#header-content {
+  display: none;
+  position: fixed;
+  justify-content: center;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 10px;
+  width: 150px;
   text-decoration: none;
   color: black;
   border-radius: 5px;
