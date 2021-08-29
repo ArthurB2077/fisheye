@@ -845,4 +845,103 @@ body {
   height: 25px;
 }
 
+#media-filter {
+  display: flex;
+  flex-direction: row;
+  margin: 5%;
+}
+#media-filter #filter-title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  margin-right: 2em;
+  padding-top: 1em;
+}
+#media-filter #filter-menu ul {
+  list-style: none;
+  background: #901C1C;
+  color: #FAFAFA;
+  border-radius: 5px;
+  margin: auto;
+  padding: 0.6em 0.3em 0.6em 0.3em;
+  height: 30%;
+}
+#media-filter #filter-menu ul #top-list-item {
+  border: none;
+  display: flex;
+  justify-content: space-between;
+}
+#media-filter #filter-menu ul #top-list-item svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  transform: rotate(180deg);
+}
+#media-filter #filter-menu ul li {
+  cursor: pointer;
+  width: 8em;
+  text-align: left;
+  padding: 0.8em 0.6em 0.8em 0.6em;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  border-top: 1px solid white;
+}
+#media-filter #filter-menu ul .list-item {
+  opacity: 0;
+}
+
+@keyframes rotate-arrow {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+@keyframes rotate-arrow-back {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes open-items {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(100);
+    opacity: 1;
+  }
+}
+@keyframes close-items {
+  from {
+    transform: translateY(100);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 0;
+  }
+}
+@keyframes open-bg {
+  from {
+    height: 30%;
+  }
+  to {
+    height: 90%;
+  }
+}
+@keyframes close-bg {
+  from {
+    height: 90%;
+  }
+  to {
+    height: 30%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
