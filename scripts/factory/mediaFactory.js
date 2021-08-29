@@ -21,12 +21,15 @@ class MediaFactory {
               medias.push(media)
             }
           })
-          console.log(medias)
           medias.forEach(media => {
             const factorDomElement = new DOMElementFactory()
 
-            const path = factorDomElement.createDOMElement('path', { d: 'M475.366,71.951c-24.175-23.606-57.575-35.404-100.215-35.404c-11.8,0-23.843,2.046-36.117,6.136c-12.279,4.093-23.702,9.615-34.256,16.562c-10.568,6.945-19.65,13.467-27.269,19.556c-7.61,6.091-14.845,12.564-21.696,19.414c-6.854-6.85-14.087-13.323-21.698-19.414c-7.616-6.089-16.702-12.607-27.268-19.556c-10.564-6.95-21.985-12.468-34.261-16.562c-12.275-4.089-24.316-6.136-36.116-6.136c-42.637,0-76.039,11.801-100.211,35.404C12.087,95.552,0,128.288,0,170.162c0,12.753,2.24,25.889,6.711,39.398c4.471,13.514,9.566,25.031,15.275,34.546c5.708,9.514,12.181,18.796,19.414,27.837c7.233,9.042,12.519,15.27,15.846,18.699c3.33,3.422,5.948,5.899,7.851,7.419L243.25,469.937c3.427,3.429,7.614,5.144,12.562,5.144s9.138-1.715,12.563-5.137l177.87-171.307c43.588-43.583,65.38-86.41,65.38-128.475C511.626,128.288,499.537,95.552,475.366,71.951z' })
-
+            const path = factorDomElement.createDOMElement('path', {
+              d: 'M438.482,58.61c-24.7-26.549-59.311-41.655-95.573-41.711c-36.291,0.042-70.938,15.14-95.676,41.694l-8.431,8.909\n' +
+                  'l-8.431-8.909C181.284,5.762,98.663,2.728,45.832,51.815c-2.341,2.176-4.602,4.436-6.778,6.778\n' +
+                  'c-52.072,56.166-52.072,142.968,0,199.134l187.358,197.581c6.482,6.843,17.284,7.136,24.127,0.654\n' +
+                  'c0.224-0.212,0.442-0.43,0.654-0.654l187.29-197.581C490.551,201.567,490.551,114.77,438.482,58.61z'
+            })
             const svg = factorDomElement.createDOMElement('svg', { viewBox: '0 0 511.626 511.627' }, path)
             const span = factorDomElement.createDOMElement('span', {}, `${media.likes}`)
 
@@ -35,10 +38,10 @@ class MediaFactory {
 
             const mediaDescription = factorDomElement.createDOMElement('div', { class: 'media-description' }, mediaName, mediaLikeContainer)
             const img = factorDomElement.createDOMElement('img', {
-              src: `../images/fishEye_photos/Sample%20Photos/${media.image}`,
+              src: `http://localhost:3000/api/file/${media.image}`,
               alt: `${media.title}`
             })
-            const source = factorDomElement.createDOMElement('source', { src: `../images/fishEye_photos/Sample%20Photos/${media.video}`, type: 'video/mp4' })
+            const source = factorDomElement.createDOMElement('source', { src: `http://localhost:3000/api/file/${media.video}`, type: 'video/mp4' })
             const video = factorDomElement.createDOMElement('video', { autoplay: 'true' }, source)
 
             let mediaElement

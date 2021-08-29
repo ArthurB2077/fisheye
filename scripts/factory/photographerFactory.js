@@ -26,7 +26,7 @@ class PhotographerFactory {
             const p1 = factory.createDOMElement('p', {}, spanCountry, sp2, sp3)
 
             const img1 = factory.createDOMElement('img', {
-              src: `../images/fishEye_photos/Sample%20Photos/Photographers%20ID%20Photos/${ptgf.portrait}`,
+              src: `http://localhost:3000/api/file/${ptgf.portrait}`,
               alt: `${ptgf.name}`
             })
             const h2 = factory.createDOMElement('h2', {}, ptgf.name)
@@ -71,7 +71,7 @@ class PhotographerFactory {
           const p1 = factory.createDOMElement('p', {}, h2, spanCountry, sp2, sp3)
 
           const img1 = factory.createDOMElement('img', {
-            src: `../images/fishEye_photos/Sample%20Photos/Photographers%20ID%20Photos/${photographersData.portrait}`,
+            src: `http://localhost:3000/api/file/${photographersData.portrait}`,
             alt: `${photographersData.name}`
           })
           const a1 = factory.createDOMElement('a', { role: 'link' }, img1)
