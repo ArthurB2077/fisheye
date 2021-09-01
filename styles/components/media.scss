@@ -27,15 +27,60 @@
         color: $color-tertiary;
       }
       svg {
-        width: 25px;
-        height: 25px;
-        fill: $color-tertiary;
+        width: 30px;
+        height: 30px;
         path {
           display: inline-block;
-          width: 25px;
-          height: 25px;
+          fill: transparent;
+          stroke: $color-tertiary;
+          stroke-width: 35px;
+          stroke-dasharray: 1580;
+          stroke-dashoffset: 0;
+          &:hover {
+            cursor: pointer;
+          }
         }
       }
     }
+  }
+}
+
+@keyframes heart-fill {
+  0% {
+    stroke-dashoffset: 0;
+  }
+
+  40% {
+    stroke-dashoffset: 1560;
+  }
+
+  80% {
+    stroke-dashoffset: 3120;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 3120;
+    fill: $color-tertiary;
+    stroke: transparent;
+  }
+}
+
+@keyframes heart-empty {
+  0% {
+    stroke-dashoffset: 3120;
+    fill: $color-tertiary;
+    stroke: transparent;
+  }
+
+  40% {
+    stroke-dashoffset: 3120;
+    fill: transparent;
+  }
+
+  80% {
+    stroke-dashoffset: 1560;
+  }
+  100% {
+    stroke-dashoffset: 0;
   }
 }

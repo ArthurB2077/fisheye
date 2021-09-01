@@ -1,0 +1,40 @@
+@import "../utils/variables";
+
+#indicators-bar {
+  position: fixed;
+  left: 77%;
+  bottom: 0;
+  background: $bg-color-secondary;
+  width: 375px;
+  height: 75px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  #likes-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    span {
+      margin-right: 10px;
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  #salary-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+  }
+}
