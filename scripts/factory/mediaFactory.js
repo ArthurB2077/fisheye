@@ -26,7 +26,7 @@ class MediaFactory {
      * For this, it uses the routes implemented by the backend part of the application. These requests are made using
      * the GET method of the HTTP protocol.
      * After retrieving the objects, it dynamically inserts the elements generated in the DOM by associating them with
-     * the style and methods allowing them to fulfill their functions.
+     * the style and static allowing them to fulfill their functions.
      */
     this.createMediaGallery = () => {
       /**
@@ -56,7 +56,7 @@ class MediaFactory {
          * injectées dans le DOM dynamiquement.
          *
          * EN: Processes all the data retrieved in order to integrate them dynamically into the DOM. It's here that
-         * we find all the methods responsible for user interactions.
+         * we find all the static responsible for user interactions.
          * Beware, all the elements generated here cannot be generated in an other place by because they depend on data
          * dynamically injected into the DOM.
          */
@@ -196,7 +196,7 @@ class MediaFactory {
              * vers l'API et de regénérer deux fois les mêmes informations. Ils sont gérer du côté de la
              * DisplayMediaManager factory.
              *
-             * EN: Above, we create an instance of the filter methods and we initialize the filter on the
+             * EN: Above, we create an instance of the filter static and we initialize the filter on the
              * popularity.
              * Below, an event listener checks if one of the tabs of the filtering menu receives a click.
              * If yes, it filters the gallery based on the tab selected by the user.

@@ -5,7 +5,7 @@ import DOMElementFactory from './domElementFactory.js'
  * l'ensemble des éléments correspondant au modèle objet photographers. La deuxième consiste à générer seulement un seul
  * objet photographer à l'aide d'une requête vers un id unique.
  *
- * EN: This class contains two methods for dynamically generating DOM elements. The first method allows to generate
+ * EN: This class contains two static for dynamically generating DOM elements. The first method allows to generate
  * all the elements corresponding to the photographers object model. The second is to generate only one
  * photographer object using a request to a unique id.
  */
