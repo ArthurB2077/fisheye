@@ -7,4 +7,4 @@ const id = url.split('phot=')[1]
 factorPhotographer.createPhotographer(`${id}`)
 
 const factorMedia = new MediaFactory()
-factorMedia.createMedia()
+factorMedia.createMediaGallery()
