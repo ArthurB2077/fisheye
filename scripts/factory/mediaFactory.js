@@ -335,7 +335,6 @@ class MediaFactory {
             icon.addEventListener('click', () => {
               const likeCnt = parseInt(document.getElementById('likes-indicator').children[0].innerHTML)
               document.getElementById('likes-indicator').children[0].innerHTML = `${likeCnt + 1}`
-              console.log(document.getElementById('likes-indicator').children[0].innerHTML)
             })
           })
         })

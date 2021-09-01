@@ -288,12 +288,12 @@ body {
   margin-top: 2.5%;
 }
 
-.main-photographers-list {
+#main-photographers-list {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.main-photographers-list .main-photographers {
+#main-photographers-list .main-photographers {
   flex-basis: 33%;
 }
 
@@ -632,40 +632,40 @@ body {
   }
 }
 
-.main-photographer-description {
+#main-photographer-description {
   margin: 5%;
   background: #FAFAFA;
   padding: 2em;
 }
-.main-photographer-description .main-photographer {
+#main-photographer-description .main-photographer {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
 }
-.main-photographer-description .main-photographer a {
+#main-photographer-description .main-photographer a {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
 }
-.main-photographer-description .main-photographer a img {
+#main-photographer-description .main-photographer a img {
   border-radius: 50%;
   object-fit: cover;
   width: 14em;
   height: 14em;
 }
-.main-photographer-description .main-photographer .container {
+#main-photographer-description .main-photographer .container {
   display: flex;
   flex-direction: row;
 }
-.main-photographer-description .main-photographer .container p {
+#main-photographer-description .main-photographer .container p {
   display: flex;
   flex-direction: column;
   margin-top: 0;
   margin-bottom: 0.5em;
 }
-.main-photographer-description .main-photographer .container p h2 {
+#main-photographer-description .main-photographer .container p h2 {
   text-align: left;
   font-weight: 400;
   color: #D3573C;
@@ -673,7 +673,7 @@ body {
   margin-bottom: 0;
   margin-top: 0;
 }
-.main-photographer-description .main-photographer .container p .main-location {
+#main-photographer-description .main-photographer .container p .main-location {
   text-align: left;
   font-weight: 400;
   font-style: normal;
@@ -682,14 +682,14 @@ body {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
 }
-.main-photographer-description .main-photographer .container p .main-tagline {
+#main-photographer-description .main-photographer .container p .main-tagline {
   text-align: left;
   font-weight: 400;
   font-style: normal;
   font-size: 1em;
   margin-bottom: 0.5em;
 }
-.main-photographer-description .main-photographer .container p .main-price {
+#main-photographer-description .main-photographer .container p .main-price {
   text-align: left;
   font-weight: 400;
   font-style: normal;
@@ -697,13 +697,13 @@ body {
   color: #757575;
   margin-bottom: 0.5em;
 }
-.main-photographer-description .main-photographer .container ul {
+#main-photographer-description .main-photographer .container ul {
   margin-top: 0;
   list-style: none;
   display: flex;
   padding: 0;
 }
-.main-photographer-description .main-photographer .container button {
+#main-photographer-description .main-photographer .container button {
   background: #901C1C;
   width: 170px;
   height: 69px;
