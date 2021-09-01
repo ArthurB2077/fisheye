@@ -23,15 +23,15 @@
             </a>
         </header>
 
-        <main>
-            <section class="main-photographer-description"></section>
-            <section class="bg-modal">
-                <div class="modal-form">
-                    <div class="title">
+        <main role="main" aria-label="Contenu de la page">
+            <section aria-label="Description du photographe" class="main-photographer-description"></section>
+            <section aria-label="Contact" class="bg-modal">
+                <div aria-label=Formulaire" aria-modal="true" class="modal-form">
+                    <div aria-label="Titre" class="title">
                         <h2 id="photographer-form-name"></h2>
                         <span class="close" onclick="closeModal();"></span>
                     </div>
-                <form action="" method="post" class="">
+                    <form aria-describedby="photographer-form-name" action="" method="post" class="">
                     <div class="form-fields">
                         <label for="first">Prénom</label>
                         <input type="text" name="first" id="first" required>
@@ -52,11 +52,11 @@
                         <input class="button" type="submit" value="Envoyer" onclick="logData()">
                     </div>
                 </form>
-            </div>
+                </div>
             </section>
-            <section id="media-filter">
-                <div id="filter-title">Trier par</div>
-                <div id="filter-menu">
+            <section aria-label="Filtre photos" id="media-filter">
+                <div aria-label="Titre du filtre" id="filter-title">Trier par</div>
+                <div aria-describedby="filter-title" id="filter-menu">
                     <ul id="menu-list-container" style="">
                         <li id="top-list-item" class="item">
                             <span>Popularité</span>
@@ -76,7 +76,7 @@
                     </ul>
                 </div>
             </section>
-            <section id="gallery">
+            <section aria-label="Galerie photos" id="gallery">
             </section>
         </main>
     </body>

@@ -76,7 +76,7 @@ class PhotographerFactory {
           })
           const a1 = factory.createDOMElement('a', { role: 'link' }, img1)
 
-          const but = factory.createDOMElement('button', { id: 'contact', class: 'main-contact', onclick: 'openModal();' }, 'Contactez-moi')
+          const but = factory.createDOMElement('button', { id: 'contact', class: 'main-contact', onclick: 'openModal();', 'aria-haspopup': true }, 'Contactez-moi')
 
           const div1 = factory.createDOMElement('div', { class: 'descritpion' }, p1, ul1)
           const div2 = factory.createDOMElement('div', { class: 'container' }, div1, but)
