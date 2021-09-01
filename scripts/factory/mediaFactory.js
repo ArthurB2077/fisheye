@@ -1,4 +1,5 @@
 import DOMElementFactory from './domElementFactory.js'
+import DisplayMediaManager from '../filter/displayMediaManager.js'
 
 class MediaFactory {
   constructor () {
@@ -46,11 +47,24 @@ class MediaFactory {
 
             let mediaElement
             if (media.image) {
-              mediaElement = factorDomElement.createDOMElement('div', { class: 'media' }, img, mediaDescription)
+              mediaElement = factorDomElement.createDOMElement('div', { class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}` }, img, mediaDescription)
             } else {
-              mediaElement = factorDomElement.createDOMElement('div', { class: 'media' }, video, mediaDescription)
+              mediaElement = factorDomElement.createDOMElement('div', { class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}` }, video, mediaDescription)
             }
             document.getElementById('gallery').appendChild(mediaElement)
+            const filter = new DisplayMediaManager()
+            filter.filterMedia('data-pop')
+            Array.from(document.getElementsByClassName('item')).forEach(item => {
+              item.addEventListener('click', () => {
+                if (item.innerHTML === 'Date') {
+                  filter.filterMedia('data-date')
+                } else if (item.innerHTML === 'Titre') {
+                  filter.filterMedia('data-name')
+                } else {
+                  filter.filterMedia('data-pop')
+                }
+              })
+            })
           }
           )
         })

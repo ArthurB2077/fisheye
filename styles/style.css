@@ -808,6 +808,7 @@ body {
 
 .media {
   height: 400px;
+  width: 500px;
   background: black;
   border-radius: 10px;
 }
