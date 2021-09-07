@@ -1,5 +1,6 @@
 import DOMElementFactory from './domElementFactory.js'
 import DisplayMediaManager from '../filter/displayMediaManager.js'
+import LightboxFactory from './lightboxFactory.js'
 
 /**
  * FR: Classe générant l'ensemble du contenu de la galerie photos dédiée aux photographes. Elle comprends les
@@ -150,11 +151,12 @@ class MediaFactory {
              * @type {*}
              */
             const img = factorDomElement.createDOMElement('img', {
+              class: 'hover-shadow cursor',
               src: `http://localhost:3000/api/file/${media.image}`,
               alt: `${media.title}`
             })
             const source = factorDomElement.createDOMElement('source', { src: `http://localhost:3000/api/file/${media.video}`, type: 'video/mp4' })
-            const video = factorDomElement.createDOMElement('video', { autoplay: 'true' }, source)
+            const video = factorDomElement.createDOMElement('video', { class: 'hover-shadow cursor', autoplay: 'true' }, source)
             /**
              * FR: Crée une variable qui retournera un élément contenant soit une vidéo soit une photo en fonction du nom de
              * la clé récupérée dans l'objet media.
@@ -166,7 +168,7 @@ class MediaFactory {
             if (media.image) {
               mediaElement = factorDomElement.createDOMElement('div', { class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}` }, img, mediaDescription)
             } else {
-              mediaElement = factorDomElement.createDOMElement('div', { class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}` }, video, mediaDescription)
+              mediaElement = factorDomElement.createDOMElement('div', { class: 'media hover-shadow cursor', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}` }, video, mediaDescription)
             }
             /**
              * FR: Parcours le DOM statique à la recherche de la balise HTML correspondant à la galerie et y insère chacun
@@ -259,7 +261,7 @@ class MediaFactory {
            *
            * EN: The indicator panel is injected into the DOM.
            */
-          document.getElementById('gallery').appendChild(indicatorsBar)
+          document.getElementById('main-content').appendChild(indicatorsBar)
           /**
            * FR: Afin de pouvoir indiquer le salaire journalier du photographe dynamiquement, il faut requêter l'objet
            * photographer. En récupérant l'id du photographe dans l'url de la page (voir photographerPage.js), on
@@ -337,6 +339,24 @@ class MediaFactory {
               document.getElementById('likes-indicator').children[0].innerHTML = `${likeCnt + 1}`
             })
           })
+          /**
+           * FR: Initialise un index de postion dynamqiue dans la galerie afin que la lightbox dispose de la position
+           * du media depuis lequel elle est appelée.
+           *
+           * EN: Initializes a dynamic index position in the gallery in order that the lightbox has the position
+           * of the media from which it is called.
+           *
+           * @type {number}
+           */
+          let index = 0
+          const mediaURLs = []
+          Array.from(document.getElementById('gallery').children).forEach(med => {
+            index++
+            med.children[0].setAttribute('onclick', `openLightbox();currentMedia(${index});`)
+            mediaURLs.push(med.children[0].getAttribute('src'))
+          })
+          const factorLightbox = new LightboxFactory()
+          factorLightbox.createLightbox(mediaURLs)
         })
         .catch((error) => {
           console.log(error)

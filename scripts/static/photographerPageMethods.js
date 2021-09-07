@@ -45,3 +45,40 @@ const manageMenu = () => {
     })
   }
 }
+
+const openLightbox = () => {
+  document.getElementById('lightbox-container').style.display = 'block'
+  document.body.style.overflowY = 'hidden'
+}
+
+const closeLightbox = () => {
+  document.getElementById('lightbox-container').style.display = 'none'
+  Array.from(document.getElementById('lightbox-content').children).forEach(child => {
+    if (child.tagName !== 'A') {
+      child.style.display = 'none'
+    }
+  })
+  document.body.removeAttribute('style')
+}
+
+let mediaIndex = 1
+
+const currentMedia = (index) => {
+  mediaIndex = index
+  showMedia(mediaIndex)
+}
+
+const changeSlide = (index) => {
+  showMedia(mediaIndex += index)
+}
+
+const showMedia = (index) => {
+  const medias = Array.from(document.getElementsByClassName('media-slide'))
+  console.log(medias.length)
+  if (index > medias.length) { mediaIndex = 1 }
+  if (index < 1) { mediaIndex = medias.length }
+  for (let i = 0; i < medias.length; i++) {
+    medias[i].style.display = 'none'
+  }
+  medias[index - 1].style.display = 'block'
+}
