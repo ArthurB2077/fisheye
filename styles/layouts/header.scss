@@ -86,4 +86,7 @@
 .header-phographer {
   margin-left: 5%;
   margin-top: 2.5%;
+  @media screen and (max-width: 700px){
+    margin-top: 8%;
+  }
 }

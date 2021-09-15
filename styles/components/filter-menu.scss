@@ -4,6 +4,9 @@
   display: flex;
   flex-direction: row;
   margin: 5%;
+  @media screen and (max-width: 700px){
+    display: none;
+  }
   #filter-title {
     font-size: 18px;
     font-style: normal;
@@ -18,7 +21,7 @@
       color: $bg-color-tertiary;
       border-radius: 5px;
       margin: auto;
-      padding: 0.60em 0.30em 0.60em 0.30em;
+      padding: 0.30em;
       height: 30%;
       #top-list-item {
         border: none;

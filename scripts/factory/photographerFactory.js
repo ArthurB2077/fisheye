@@ -153,9 +153,9 @@ class PhotographerFactory {
            */
           document.getElementById('photographer-form-name').innerHTML = `Contactez-moi <br> ${photographersData.name}`
 
-          const ul1 = factory.createDOMElement('ul', {})
+          const ul1 = factory.createDOMElement('div', { class: 'tag-container' })
           for (let i = 0; i < photographersData.tags.length; i++) {
-            ul1.appendChild(factory.createDOMElement('li', {}, factory.createDOMElement('a', { class: 'tag' }, `#${photographersData.tags[i]}`)))
+            ul1.appendChild(factory.createDOMElement('div', {}, factory.createDOMElement('a', { class: 'tag' }, `#${photographersData.tags[i]}`)))
           }
 
           const spanCountry = factory.createDOMElement('span', { class: 'main-location' }, `${photographersData.city}, ${photographersData.country}`)

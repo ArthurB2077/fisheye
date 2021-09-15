@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 const openModal = () => {
+  document.getElementById('responsive-contact').style.display = 'none'
   Array.from(document.getElementsByClassName('bg-modal')).forEach(modal => {
     modal.style.display = 'block'
   })
@@ -10,6 +11,7 @@ const closeModal = () => {
   Array.from(document.getElementsByClassName('bg-modal')).forEach(modal => {
     modal.style.display = 'none'
   })
+  document.getElementById('responsive-contact').removeAttribute('style')
 }
 
 // eslint-disable-next-line no-unused-vars

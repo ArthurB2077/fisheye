@@ -1,7 +1,19 @@
 #gallery {
   display: grid;
+  justify-content: center;
   grid-template-columns: auto auto auto;
-  grid-row-gap: 100px;
-  grid-column-gap: 100px;
+  grid-row-gap: 5%;
+  grid-column-gap: 5%;
   margin: 5%;
+  @media screen and (max-width: 600px){
+    grid-template-columns: auto auto;
+  }
+  @media screen and (max-width: 1700px){
+    grid-template-columns: auto auto;
+  }
+  @media screen and (max-width: 1150px){
+    grid-template-columns: auto;
+    grid-column-gap: 3%;
+    grid-row-gap: 3%;
+  }
 }
