@@ -353,7 +353,11 @@ class MediaFactory {
           Array.from(document.getElementById('gallery').children).forEach(med => {
             index++
             med.children[0].setAttribute('onclick', `openLightbox();currentMedia(${index});`)
-            mediaURLs.push(med.children[0].getAttribute('src'))
+            if (med.children[0].getAttribute('src') === null) {
+              mediaURLs.push(med.children[0].children[0].getAttribute('src'))
+            } else {
+              mediaURLs.push(med.children[0].getAttribute('src'))
+            }
           })
           const factorLightbox = new LightboxFactory()
           factorLightbox.createLightbox(mediaURLs)

@@ -1064,7 +1064,7 @@ body {
   display: none;
 }
 .lightbox #lightbox-content .media-slide img {
-  height: 800px;
+  height: 675px;
   object-fit: cover;
 }
 .lightbox #lightbox-content .prev,

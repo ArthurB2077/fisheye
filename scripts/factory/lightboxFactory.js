@@ -7,9 +7,16 @@ class LightboxFactory {
       const slides = []
 
       mediasURLs.forEach(med => {
-        const mediaItem = factorDomElement.createDOMElement('img', { src: `${med}`, style: 'width: 100%' })
-        const slide = factorDomElement.createDOMElement('div', { class: 'media-slide' }, mediaItem)
-        slides.push(slide)
+        if (med.includes('.mp4')) {
+          const mediaItemSource = factorDomElement.createDOMElement('source', { src: `${med}`, type: 'video/mp4' })
+          const mediaItem = factorDomElement.createDOMElement('video', { autoplay: 'true', controls: 'true', style: 'width:100%;height:680px' }, mediaItemSource)
+          const slide = factorDomElement.createDOMElement('div', { class: 'media-slide' }, mediaItem)
+          slides.push(slide)
+        } else {
+          const mediaItem = factorDomElement.createDOMElement('img', { src: `${med}`, style: 'width: 100%' })
+          const slide = factorDomElement.createDOMElement('div', { class: 'media-slide' }, mediaItem)
+          slides.push(slide)
+        }
       })
 
       const pathLeftArrow = factorDomElement.createDOMElement('path', {

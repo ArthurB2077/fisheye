@@ -64,8 +64,7 @@ const closeLightbox = () => {
 let mediaIndex = 1
 
 const currentMedia = (index) => {
-  mediaIndex = index
-  showMedia(mediaIndex)
+  showMedia(mediaIndex = index - 1)
 }
 
 const changeSlide = (index) => {
@@ -74,11 +73,8 @@ const changeSlide = (index) => {
 
 const showMedia = (index) => {
   const medias = Array.from(document.getElementsByClassName('media-slide'))
-  console.log(medias.length)
-  if (index > medias.length) { mediaIndex = 1 }
-  if (index < 1) { mediaIndex = medias.length }
   for (let i = 0; i < medias.length; i++) {
     medias[i].style.display = 'none'
   }
-  medias[index - 1].style.display = 'block'
+  medias[index % medias.length].style.display = 'block'
 }
