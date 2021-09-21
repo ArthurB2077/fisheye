@@ -30,23 +30,8 @@
         position: relative;
         width: 32px;
         height: 32px;
-        opacity: 1;
         cursor: pointer;
-      }
-      .close:before,
-      .close:after {
-        display: inline-flex;
-        position: relative;
-        content: " ";
-        height: 33px;
-        width: 3px;
-        background-color: #fff;
-      }
-      .close:before {
-        transform: rotate(45deg);
-      }
-      .close:after {
-        transform: rotate(-45deg);
+        fill: white;
       }
     }
 

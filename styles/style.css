@@ -2,6 +2,9 @@
 body {
   font-family: "DM Sans", sans-serif;
 }
+body:focus {
+  border: 3px solid red;
+}
 
 @keyframes fadein {
   from {
@@ -851,23 +854,8 @@ body {
   position: relative;
   width: 32px;
   height: 32px;
-  opacity: 1;
   cursor: pointer;
-}
-.bg-modal .modal-form .title .close:before,
-.bg-modal .modal-form .title .close:after {
-  display: inline-flex;
-  position: relative;
-  content: " ";
-  height: 33px;
-  width: 3px;
-  background-color: #fff;
-}
-.bg-modal .modal-form .title .close:before {
-  transform: rotate(45deg);
-}
-.bg-modal .modal-form .title .close:after {
-  transform: rotate(-45deg);
+  fill: white;
 }
 .bg-modal .modal-form .form-fields {
   display: flex;

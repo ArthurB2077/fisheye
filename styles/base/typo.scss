@@ -4,4 +4,7 @@ $dms: 'DM Sans', sans-serif;
 
 body {
   font-family: $dms;
+  &:focus {
+    border: 3px solid red;
+  }
 }

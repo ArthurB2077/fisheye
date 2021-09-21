@@ -4,6 +4,7 @@ const openModal = () => {
   Array.from(document.getElementsByClassName('bg-modal')).forEach(modal => {
     modal.style.display = 'block'
   })
+  document.getElementById('first').focus()
 }
 
 // eslint-disable-next-line no-unused-vars
