@@ -7,28 +7,58 @@
 
 Projet 6 de ma formation de développeur Frontend consistant à créer de A à Z un site site web de galieries photographique. 
 L'accessibilité est le coeur de ce projet et le site réponds à toutes les attentes pouvant en découler. 
+Pour le code Javascript, la méthode Factory Design Pattern est au centre du projet.
+Vous pouvez retrouver ici la maquette Figma : https://www.figma.com/file/pt8xJxC1QffW4HX16QhGZJ/UI-Design-FishEye-FR
 
-Pour commencer
-Entrez ici les instructions pour bien débuter avec votre projet...
+Démarrage:
+user@machine: ~/Desktop$ cd monDossier/OuInstaller/leProjet
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet$ git clone https://github.com/ArthurBQ/ArthurBequie_06_20082021.git
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet$ cd /ArthurBequie_06_20082021
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021$ npm install
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021$ cd /backend
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021/backend$ npm install
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021/backend$ nodemon
 
-Pré-requis
-Ce qu'il est requis pour commencer avec votre projet...
+Après cela le backend est lancé et vous pouvait ouvrir une page html du projet dans un naviguateur web. 
+Tous les medias seront chargés depuis la BDD et la structure du site web créer dynamiquement
+Attention votre port 3000 doit être disponible !!
 
-Démarrage
-Dites comment faire pour lancer votre projet
-
-Fabriqué avec
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
-
-exemples :
-
-Materialize.css - Framework CSS (front-end)
-Atom - Editeur de textes
-Contributing
-Si vous souhaitez contribuer, lisez le fichier CONTRIBUTING.md pour savoir comment le faire.
-
-Versions
-Listez les versions ici exemple : Dernière version stable : 5.0 Dernière version : 5.1 Liste des versions : Cliquer pour afficher (pour le lien mettez simplement l'URL de votre projets suivi de /tags)
+Fabriqué avec: 
+Webstorm - Editeur de textes
+Scss.css - Framework CSS (front-end)
+EsLint - Linter JS
 
 Auteurs
-Listez le(s) auteur(s) du projet ici !
+Arthur Béquié
+
+
+
+Project 6 of my training as a Frontend developer consisting in creating from A to Z a website of photographic galleries.
+Accessibility is the heart of this project and the site meets all the expectations that may arise from it.
+For JavaScript code, the Factory Design Pattern method is at the center of the project.
+You can find the Figma model here: https://www.figma.com/file/pt8xJxC1QffW4HX16QhGZJ/UI-Design-FishEye-FR
+
+Start-up:
+user@machine: ~/Desktop$ cd monDossier/OuInstaller/leProjet
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet$ git clone https://github.com/ArthurBQ/ArthurBequie_06_20082021.git
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet$ cd /ArthurBequie_06_20082021
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021$ npm install
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021$ cd /backend
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021/backend$ npm install
+user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021/backend$ nodemon
+
+After that the backend is launched and you could open an html page of the project in a web browser.
+All the media will be loaded from the database and the structure of the website will be dynamically created
+Attention your port 3000 must be available !!
+
+Made with:
+Webstorm - Text editor
+Scss.css - CSS Framework (front-end)
+EsLint - Linter JS
+
+Authors
+Arthur Béquié 
+En savoir plus sur ce texte source
+Vous devez indiquer le texte source pour obtenir des informations supplémentaires
+Envoyer des commentaires
+Panneaux latéraux
