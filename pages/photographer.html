@@ -10,7 +10,7 @@
 
     <body>
         <header role="banner" class="header-phographer">
-            <a aria-label="Page d'accueil Fisheye" href="./home.html">
+            <a aria-label="Page d'accueil Fisheye" title="Page d'accueil" href="./home.html" tabindex="1">
                 <svg role="img" alt="Logo Fisheye" width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M24.7206 0.911621V6.51058H6.31164V17.5783H21.4333V22.9168H6.31164V39.1929H0V0.911621H24.7206Z" fill="#911C1C"/>
                     <path d="M34.5826 1.04167C35.2401 1.69271 35.6346 2.60417 35.6346 3.64583C35.6346 4.6875 35.2401 5.46875 34.5826 6.11979C33.9252 6.77083 33.0047 7.16146 31.9528 7.16146C30.9008 7.16146 30.1119 6.77083 29.3229 6.11979C28.6655 5.46875 28.271 4.55729 28.271 3.64583C28.271 2.60417 28.6655 1.82292 29.3229 1.04167C29.9804 0.390625 30.9008 0 31.9528 0C33.0047 0 33.7937 0.390625 34.5826 1.04167ZM34.8456 11.1979V39.1927H28.9285V11.1979H34.8456Z" fill="#911C1C"/>
@@ -25,11 +25,11 @@
 
         <main id="main-content" role="main" aria-label="Contenu de la page">
             <section id="main-photographer-description" aria-label="Description du photographe">
-                <div id="responsive-contact" class="button" onclick="openModal();">Contactez-moi</div>
+                <div id="responsive-contact" class="button" onclick="openModal();" tabindex="1">Contactez-moi</div>
             </section>
             <section aria-label="Contact" class="bg-modal">
                 <div aria-label=Formulaire" aria-modal="true" class="modal-form">
-                    <div aria-label="Titre" class="title">
+                    <div aria-label="Titre du formulaire" class="title">
                         <h2 id="photographer-form-name"></h2>
                         <span class="close" onclick="closeModal();"></span>
                     </div>
@@ -58,7 +58,7 @@
             </section>
             <section aria-label="Filtre photos" id="media-filter">
                 <div aria-label="Titre du filtre" id="filter-title">Trier par</div>
-                <div aria-describedby="filter-title" id="filter-menu">
+                <div aria-describedby="filter-title" role="button" id="filter-menu" tabindex="1">
                     <ul id="menu-list-container" style="">
                         <li id="top-list-item" class="item">
                             <span>Popularité</span>

@@ -13,42 +13,30 @@ import LightboxFactory from './lightboxFactory.js'
  * Among them, we find the filter, the incrementation likes system and the salary/total number indicators panel.
  */
 class MediaFactory {
+  /**
+   * FR: Cette méthode génère dynamiquement tout le contenu de la galerie photos en récupérant les objets Javascripts
+   * stockés dans la base de donnée.
+   * Pour cela, elle utilise les routes implémenter par la partie backend de
+   * l'application. Ces requêtes sont effectuées à l'aide de la méthode GET du protocole HTTP.
+   * Après récupérations des objets, elle insère dynamiquement les élements générés dans le DOM en leur associant le
+   * style et les méthodes leurs permettant de remplir leurs fonctions.
+   *
+   * EN: This method dynamically generates all the content of the photo gallery by retrieving Javascripts objects
+   * stored in the database.
+   * For this, it uses the routes implemented by the backend part of the application. These requests are made using
+   * the GET method of the HTTP protocol.
+   * After retrieving the objects, it dynamically inserts the elements generated in the DOM by associating them with
+   * the style and static allowing them to fulfill their functions.
+   */
   constructor () {
-    /**
-     * FR: Cette méthode génère dynamiquement tout le contenu de la galerie photos en récupérant les objets Javascripts
-     * stockés dans la base de donnée.
-     * Pour cela, elle utilise les routes implémenter par la partie backend de
-     * l'application. Ces requêtes sont effectuées à l'aide de la méthode GET du protocole HTTP.
-     * Après récupérations des objets, elle insère dynamiquement les élements générés dans le DOM en leur associant le
-     * style et les méthodes leurs permettant de remplir leurs fonctions.
-     *
-     * EN: This method dynamically generates all the content of the photo gallery by retrieving Javascripts objects
-     * stored in the database.
-     * For this, it uses the routes implemented by the backend part of the application. These requests are made using
-     * the GET method of the HTTP protocol.
-     * After retrieving the objects, it dynamically inserts the elements generated in the DOM by associating them with
-     * the style and static allowing them to fulfill their functions.
-     */
     this.createMediaGallery = () => {
-      /**
-       * FR: Requête vers l'API contenant les JSON correspondants aux objets photos requis.
-       * EN: Request to the API containing the JSON corresponding to the required photo objects.
-       */
       fetch('http://localhost:3000/api/medias')
-        /**
-         * FR: Vérifie si la réponse du coté serveur est valide.
-         * Si oui, exporte les données récupérer au format JSON.
-         * Si non, renvoie une erreur.
-         *
-         * EN: Checks if the response from the serverside is valid.
-         * If yes, export the recovered data in JSON format.
-         * If not, return an error.
-         */
         .then((response) => {
           if (!response.ok) {
             throw new Error('HTTP error ' + response.status)
+          } else {
+            return response.json()
           }
-          return response.json()
         })
         /**
          * FR: Traite l'ensemble des données récupérées afin de les intégrer dynamiquement dans le DOM. C'est ici que
@@ -143,38 +131,35 @@ class MediaFactory {
              * EN: Create the container in which we find the name of the photo and the tag created above.
              * @type {*}
              */
-            const mediaName = factorDomElement.createDOMElement('div', { class: 'media-name' }, `${media.title}`)
+            const mediaName = factorDomElement.createDOMElement('div', { id: 'media-title', class: 'media-name' }, `${media.title}`)
             const mediaDescription = factorDomElement.createDOMElement('div', { class: 'media-description' }, mediaName, mediaLikeContainer)
             /**
              * FR: Créé les deux balises image et vidéo pouvant être utilisées dans un cas ou dans l'autre.
              * EN: Created both image and video tags that can be used in either case.
              * @type {*}
              */
-            const img = factorDomElement.createDOMElement('img', {
-              class: 'hover-shadow cursor',
-              src: `http://localhost:3000/api/file/${media.image}`,
-              alt: `${media.title}`
-            })
-            const source = factorDomElement.createDOMElement('source', { src: `http://localhost:3000/api/file/${media.video}`, type: 'video/mp4' })
-            const video = factorDomElement.createDOMElement('video', { class: 'hover-shadow cursor', autoplay: 'true' }, source)
+            let img, video, mediaElement
+            if (media.image) {
+              img = factorDomElement.createDOMElement('img', {
+                class: 'hover-shadow cursor',
+                src: `http://localhost:3000/api/file/${media.image}`,
+                alt: `${media.title}`
+              })
+              mediaElement = factorDomElement.createDOMElement('article', { role: 'link', 'aria-label': 'Photo', 'aria-describedby': 'media-title', class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}`, tabIndex: '4' }, img, mediaDescription)
+            } else {
+              const source = factorDomElement.createDOMElement('source', { src: `http://localhost:3000/api/file/${media.video}`, type: 'video/mp4' })
+              video = factorDomElement.createDOMElement('video', { class: 'hover-shadow cursor', autoplay: 'true' }, source)
+              mediaElement = factorDomElement.createDOMElement('article', { role: 'link', 'aria-describedby': 'media-title', 'aria-label': 'Photo', class: 'media hover-shadow cursor', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}`, tabIndex: '4' }, video, mediaDescription)
+            }
             /**
              * FR: Crée une variable qui retournera un élément contenant soit une vidéo soit une photo en fonction du nom de
              * la clé récupérée dans l'objet media.
+             * Puis, parcours le DOM statique à la recherche de la balise HTML correspondant à la galerie et y insère chacun
+             * des éléments générés correspondant au media récupéré.
              *
              * EN: Create a variable that will return an element containing either a video or a photo depending on the
              * key name retrieved from the media object.
-             */
-            let mediaElement
-            if (media.image) {
-              mediaElement = factorDomElement.createDOMElement('div', { class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}` }, img, mediaDescription)
-            } else {
-              mediaElement = factorDomElement.createDOMElement('div', { class: 'media hover-shadow cursor', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}` }, video, mediaDescription)
-            }
-            /**
-             * FR: Parcours le DOM statique à la recherche de la balise HTML correspondant à la galerie et y insère chacun
-             * des éléments générés correspondant au media récupéré.
-             *
-             * EN: Browse the static DOM looking for the HTML tag corresponding to the gallery and insert each one
+             * Then, browse the static DOM looking for the HTML tag corresponding to the gallery and insert each one
              * generated elements corresponding to the recovered media in it.
              */
             document.getElementById('gallery').appendChild(mediaElement)
