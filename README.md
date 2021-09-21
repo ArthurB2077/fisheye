@@ -31,7 +31,7 @@ EsLint - Linter JS
 Auteurs
 Arthur Béquié
 
-
+########################################### ENGLISH VERSION #############################################################
 
 Project 6 of my training as a Frontend developer consisting in creating from A to Z a website of photographic galleries.
 Accessibility is the heart of this project and the site meets all the expectations that may arise from it.
