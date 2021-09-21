@@ -195,18 +195,21 @@ class MediaFactory {
               item.addEventListener('click', () => {
                 if (item.innerHTML === 'Date') {
                   filter.filterMedia('data-date')
-                  Array.from(document.getElementsByClassName('media-name')).forEach(med => {
-                    med.innerHTML = `${media.date}`
-                  })
+                  document.getElementById('item-date').setAttribute('data-selected', 'true')
                 } else if (item.innerHTML === 'Titre') {
                   filter.filterMedia('data-name')
-                  Array.from(document.getElementsByClassName('media-name')).forEach(med => {
-                    med.innerHTML = `${media.title}`
-                  })
+                  document.getElementById('item-date').setAttribute('data-selected', 'false')
                 } else {
                   filter.filterMedia('data-pop')
-                  Array.from(document.getElementsByClassName('media-name')).forEach(med => {
-                    med.innerHTML = `${media.title}`
+                  document.getElementById('item-date').setAttribute('data-selected', 'false')
+                }
+                if (document.getElementById('item-date').getAttribute('data-selected') === 'true') {
+                  Array.from(document.getElementsByClassName('media')).forEach(med => {
+                    med.children[1].children[0].innerHTML = med.getAttribute('data-date')
+                  })
+                } else {
+                  Array.from(document.getElementsByClassName('media')).forEach(med => {
+                    med.children[1].children[0].innerHTML = med.getAttribute('data-name')
                   })
                 }
               })
