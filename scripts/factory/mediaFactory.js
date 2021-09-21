@@ -195,10 +195,19 @@ class MediaFactory {
               item.addEventListener('click', () => {
                 if (item.innerHTML === 'Date') {
                   filter.filterMedia('data-date')
+                  Array.from(document.getElementsByClassName('media-name')).forEach(med => {
+                    med.innerHTML = `${media.date}`
+                  })
                 } else if (item.innerHTML === 'Titre') {
                   filter.filterMedia('data-name')
+                  Array.from(document.getElementsByClassName('media-name')).forEach(med => {
+                    med.innerHTML = `${media.title}`
+                  })
                 } else {
                   filter.filterMedia('data-pop')
+                  Array.from(document.getElementsByClassName('media-name')).forEach(med => {
+                    med.innerHTML = `${media.title}`
+                  })
                 }
               })
             })
