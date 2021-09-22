@@ -236,19 +236,26 @@ class MediaFactory {
              * The "not-liked" style class is carried by default by all icons in order to identify if they can
              * receive a like or not.
              */
-            Array.from(document.getElementsByClassName('media-icon')).forEach(icon => {
-              icon.addEventListener('click', () => {
-                if (icon.classList.contains('not-liked')) {
-                  icon.children[0].removeAttribute('style')
-                  icon.children[0].style.animation = 'heart-fill 1000ms linear forwards'
-                  icon.classList.remove('not-liked')
-                  icon.classList.add('liked')
-                  const oldLikesValue = parseInt(icon.parentNode.children[0].innerHTML)
-                  newLikesNumber = oldLikesValue + 1
-                  icon.parentNode.children[0].innerHTML = `${newLikesNumber}`
-                  console.log(icon.parentNode.children[0].innerHTML)
-                }
-              })
+          })
+          Array.from(document.getElementsByClassName('media-icon')).forEach(icon => {
+            console.log(icon)
+            icon.addEventListener('click', () => {
+              if (icon.classList.contains('not-liked')) {
+                icon.children[0].style.fill = '#901C1C'
+                icon.classList.remove('not-liked')
+                icon.classList.add('liked')
+                const oldLikesValue = parseInt(icon.parentNode.children[0].innerHTML)
+                newLikesNumber = oldLikesValue + 1
+                icon.parentNode.children[0].innerHTML = `${newLikesNumber}`
+              } else if (icon.classList.contains('liked')) {
+                icon.children[0].removeAttribute('style')
+                icon.children[0].style.fill = 'transparent'
+                icon.classList.remove('liked')
+                icon.classList.add('not-liked')
+                const oldLikesValue = parseInt(icon.parentNode.children[0].innerHTML)
+                newLikesNumber = oldLikesValue - 1
+                icon.parentNode.children[0].innerHTML = `${newLikesNumber}`
+              }
             })
           })
           /**
@@ -341,8 +348,11 @@ class MediaFactory {
            */
           Array.from(document.getElementsByClassName('media-icon')).forEach(icon => {
             icon.addEventListener('click', () => {
-              const likeCnt = parseInt(document.getElementById('likes-indicator').children[0].innerHTML)
-              document.getElementById('likes-indicator').children[0].innerHTML = `${likeCnt + 1}`
+              let likeCnt = 0
+              Array.from(document.getElementsByClassName('media-like-container')).forEach(cont => {
+                likeCnt += parseInt(cont.children[0].innerHTML)
+              })
+              document.getElementById('likes-indicator').children[0].innerHTML = `${likeCnt}`
             })
           })
           /**

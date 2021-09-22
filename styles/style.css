@@ -962,40 +962,6 @@ body:focus {
   cursor: pointer;
 }
 
-@keyframes heart-fill {
-  0% {
-    stroke-dashoffset: 0;
-  }
-  40% {
-    stroke-dashoffset: 1560;
-  }
-  80% {
-    stroke-dashoffset: 3120;
-    fill: transparent;
-  }
-  100% {
-    stroke-dashoffset: 3120;
-    fill: #901C1C;
-    stroke: transparent;
-  }
-}
-@keyframes heart-empty {
-  0% {
-    stroke-dashoffset: 3120;
-    fill: #901C1C;
-    stroke: transparent;
-  }
-  40% {
-    stroke-dashoffset: 3120;
-    fill: transparent;
-  }
-  80% {
-    stroke-dashoffset: 1560;
-  }
-  100% {
-    stroke-dashoffset: 0;
-  }
-}
 #media-filter {
   display: flex;
   flex-direction: row;
