@@ -78,5 +78,9 @@ const showMedia = (index) => {
   for (let i = 0; i < medias.length; i++) {
     medias[i].style.display = 'none'
   }
-  medias[index % medias.length].style.display = 'block'
+  if (index < 0) {
+    mediaIndex = medias.length - 1
+  }
+  console.log(mediaIndex)
+  medias[mediaIndex % medias.length].style.display = 'block'
 }
