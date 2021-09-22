@@ -5,6 +5,9 @@
   width: 500px;
   background: black;
   border-radius: 10px;
+  &:hover {
+    cursor: pointer;
+  }
   @media screen and (max-width: 1150px){
     width: auto;
   }

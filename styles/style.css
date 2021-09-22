@@ -888,6 +888,9 @@ body:focus {
   background: black;
   border-radius: 10px;
 }
+.media:hover {
+  cursor: pointer;
+}
 @media screen and (max-width: 1150px) {
   .media {
     width: auto;
@@ -1140,7 +1143,7 @@ body:focus {
   font-style: normal;
 }
 
-.lightbox {
+#lightbox-container {
   display: none;
   position: fixed;
   z-index: 3;
@@ -1153,56 +1156,56 @@ body:focus {
   background-color: white;
 }
 @media screen and (max-width: 1150px) {
-  .lightbox {
+  #lightbox-container {
     height: fit-content;
     align-content: center;
   }
 }
-.lightbox .close {
+#lightbox-container .close {
   position: absolute;
   top: 10px;
   right: -50px;
 }
-.lightbox .close svg {
+#lightbox-container .close svg {
   fill: #901C1C;
   width: 32px;
   height: 32px;
 }
 @media screen and (max-width: 1150px) {
-  .lightbox .close svg {
+  #lightbox-container .close svg {
     width: 20px;
     height: 20px;
   }
 }
-.lightbox .cursor {
+#lightbox-container .cursor {
   cursor: pointer;
 }
-.lightbox #lightbox-content {
+#lightbox-container #lightbox-content {
   position: relative;
   background-color: #fefefe;
   margin: auto;
   padding: 0;
   width: 50%;
 }
-.lightbox #lightbox-content .media-slide {
+#lightbox-container #lightbox-content .media-slide {
   display: none;
 }
-.lightbox #lightbox-content .media-slide img {
+#lightbox-container #lightbox-content .media-slide img {
   height: 675px;
   object-fit: cover;
 }
 @media screen and (max-width: 1150px) {
-  .lightbox #lightbox-content .media-slide img {
+  #lightbox-container #lightbox-content .media-slide img {
     height: 400px;
   }
 }
 @media screen and (max-width: 775px) {
-  .lightbox #lightbox-content .media-slide img {
+  #lightbox-container #lightbox-content .media-slide img {
     height: auto;
   }
 }
-.lightbox #lightbox-content .prev,
-.lightbox #lightbox-content .next {
+#lightbox-container #lightbox-content .prev,
+#lightbox-container #lightbox-content .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -1214,23 +1217,23 @@ body:focus {
   font-size: 20px;
   transition: 0.6s ease;
 }
-.lightbox #lightbox-content .prev svg,
-.lightbox #lightbox-content .next svg {
+#lightbox-container #lightbox-content .prev svg,
+#lightbox-container #lightbox-content .next svg {
   fill: #901C1C;
   width: 48px;
   height: 48px;
 }
 @media screen and (max-width: 1150px) {
-  .lightbox #lightbox-content .prev svg,
-.lightbox #lightbox-content .next svg {
+  #lightbox-container #lightbox-content .prev svg,
+#lightbox-container #lightbox-content .next svg {
     width: 30px;
     height: 30px;
   }
 }
-.lightbox #lightbox-content .next {
+#lightbox-container #lightbox-content .next {
   right: -80px;
 }
-.lightbox #lightbox-content .prev {
+#lightbox-container #lightbox-content .prev {
   left: -80px;
 }
 

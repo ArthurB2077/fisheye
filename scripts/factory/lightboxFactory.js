@@ -2,19 +2,19 @@ import DOMElementFactory from './domElementFactory.js'
 
 class LightboxFactory {
   constructor () {
-    this.createLightbox = (mediasURLs) => {
+    this.createLightbox = (mediaData) => {
       const factorDomElement = new DOMElementFactory()
       const slides = []
 
-      mediasURLs.forEach(med => {
-        if (med.includes('.mp4')) {
-          const mediaItemSource = factorDomElement.createDOMElement('source', { src: `${med}`, type: 'video/mp4' })
+      mediaData.forEach(med => {
+        if (med.src.includes('.mp4')) {
+          const mediaItemSource = factorDomElement.createDOMElement('source', { src: `${med.src}`, type: 'video/mp4' })
           const mediaItem = factorDomElement.createDOMElement('video', { autoplay: 'true', controls: 'true', style: 'width:100%;height:680px' }, mediaItemSource)
-          const slide = factorDomElement.createDOMElement('div', { class: 'media-slide' }, mediaItem)
+          const slide = factorDomElement.createDOMElement('div', { class: 'media-slide', 'data-pop': med['data-pop'], 'data-date': med['data-date'], 'data-name': med['data-name'] }, mediaItem)
           slides.push(slide)
         } else {
-          const mediaItem = factorDomElement.createDOMElement('img', { src: `${med}`, style: 'width: 100%' })
-          const slide = factorDomElement.createDOMElement('div', { class: 'media-slide' }, mediaItem)
+          const mediaItem = factorDomElement.createDOMElement('img', { src: `${med.src}`, style: 'width: 100%' })
+          const slide = factorDomElement.createDOMElement('div', { class: 'media-slide', 'data-pop': med['data-pop'], 'data-date': med['data-date'], 'data-name': med['data-name'] }, mediaItem)
           slides.push(slide)
         }
       })

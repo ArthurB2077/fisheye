@@ -43,7 +43,6 @@ const manageMenu = () => {
     document.getElementById('menu-list-container').style.animation = 'close-bg 1s forwards'
     Array.from(document.getElementsByClassName('list-item')).forEach(item => {
       item.removeAttribute('style')
-      // item.style.display = 'none'
       item.style.animation = 'close-items 1s forwards'
     })
   }

@@ -196,12 +196,18 @@ class MediaFactory {
                 if (item.innerHTML === 'Date') {
                   filter.filterMedia('data-date')
                   document.getElementById('item-date').setAttribute('data-selected', 'true')
+                  document.getElementById('item-name').setAttribute('data-selected', 'false')
+                  document.getElementById('top-list-item').setAttribute('data-selected', 'false')
                 } else if (item.innerHTML === 'Titre') {
                   filter.filterMedia('data-name')
                   document.getElementById('item-date').setAttribute('data-selected', 'false')
+                  document.getElementById('item-name').setAttribute('data-selected', 'true')
+                  document.getElementById('top-list-item').setAttribute('data-selected', 'false')
                 } else {
                   filter.filterMedia('data-pop')
                   document.getElementById('item-date').setAttribute('data-selected', 'false')
+                  document.getElementById('item-name').setAttribute('data-selected', 'false')
+                  document.getElementById('top-list-item').setAttribute('data-selected', 'true')
                 }
                 if (document.getElementById('item-date').getAttribute('data-selected') === 'true') {
                   Array.from(document.getElementsByClassName('media')).forEach(med => {
@@ -337,7 +343,7 @@ class MediaFactory {
             })
           })
           /**
-           * FR: Initialise un index de postion dynamqiue dans la galerie afin que la lightbox dispose de la position
+           * FR: Initialise un index de position dynamique dans la galerie afin que la lightbox dispose de la position
            * du media depuis lequel elle est appelée.
            *
            * EN: Initializes a dynamic index position in the gallery in order that the lightbox has the position
@@ -346,19 +352,37 @@ class MediaFactory {
            * @type {number}
            */
           let index = 0
-          const mediaURLs = []
+          const mediaData = []
           Array.from(document.getElementById('gallery').children).forEach(med => {
             index++
             med.children[0].setAttribute('onclick', `openLightbox();currentMedia(${index});`)
             if (med.children[0].getAttribute('src') === null) {
-              mediaURLs.push(med.children[0].children[0].getAttribute('src'))
+              mediaData.push({ src: med.children[0].children[0].getAttribute('src'), 'data-pop': med.getAttribute('data-pop'), 'data-date': med.getAttribute('data-date'), 'data-name': med.getAttribute('data-name') })
             } else {
-              mediaURLs.push(med.children[0].getAttribute('src'))
+              mediaData.push({ src: med.children[0].getAttribute('src'), 'data-pop': med.getAttribute('data-pop'), 'data-date': med.getAttribute('data-date'), 'data-name': med.getAttribute('data-name') })
             }
           })
           const factorLightbox = new LightboxFactory()
-          factorLightbox.createLightbox(mediaURLs)
+          factorLightbox.createLightbox(mediaData)
+
+          Array.from(document.getElementsByClassName('media')).forEach(med => {
+            med.addEventListener('click', () => {
+              Array.from(document.getElementsByClassName('item')).forEach(item => {
+                if (item.getAttribute('data-selected') === 'true') {
+                  const filter = new DisplayMediaManager()
+                  if (item.innerText === 'Date') {
+                    filter.filterSlide('data-date')
+                  } else if (item.innerText === 'Titre') {
+                    filter.filterSlide('data-name')
+                  } else if (item.innerText === 'Popularité') {
+                    filter.filterSlide('data-pop')
+                  }
+                }
+              })
+            })
+          })
         })
+
         .catch((error) => {
           console.log(error)
         })
