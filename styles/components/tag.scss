@@ -18,6 +18,10 @@
     font-size: 0.8em;
     margin-top: 5px;
   }
+  @media screen and (max-width: 440px){
+    font-size: 0.6em;
+    margin-top: 1px;
+  }
 }
 
 .tag-selected {

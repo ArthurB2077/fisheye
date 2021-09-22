@@ -352,6 +352,12 @@ body:focus {
     margin-top: 5px;
   }
 }
+@media screen and (max-width: 440px) {
+  .tag, .tag-nav {
+    font-size: 0.6em;
+    margin-top: 1px;
+  }
+}
 
 .tag-selected {
   width: fit-content;
@@ -677,11 +683,22 @@ body:focus {
     justify-content: center;
   }
 }
+@media screen and (max-width: 480px) {
+  #main-photographer-description {
+    display: block;
+  }
+}
 #main-photographer-description .main-photographer {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  padding: 4%;
+}
+@media screen and (max-width: 480px) {
+  #main-photographer-description .main-photographer {
+    padding: 0;
+  }
 }
 #main-photographer-description .main-photographer a {
   display: flex;
@@ -697,8 +714,23 @@ body:focus {
 }
 @media screen and (max-width: 700px) {
   #main-photographer-description .main-photographer a img {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  #main-photographer-description .main-photographer a img {
+    width: 150px;
+    height: 150px;
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 440px) {
+  #main-photographer-description .main-photographer a img {
+    width: 100px;
+    height: 100px;
+    margin-left: 10px;
   }
 }
 #main-photographer-description .main-photographer .container {
@@ -721,7 +753,17 @@ body:focus {
 }
 @media screen and (max-width: 700px) {
   #main-photographer-description .main-photographer .container p h2 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 550px) {
+  #main-photographer-description .main-photographer .container p h2 {
     font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 440px) {
+  #main-photographer-description .main-photographer .container p h2 {
+    font-size: 1.25em;
   }
 }
 #main-photographer-description .main-photographer .container p .main-location {
@@ -735,7 +777,17 @@ body:focus {
 }
 @media screen and (max-width: 700px) {
   #main-photographer-description .main-photographer .container p .main-location {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 550px) {
+  #main-photographer-description .main-photographer .container p .main-location {
     font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 440px) {
+  #main-photographer-description .main-photographer .container p .main-location {
+    font-size: 0.6em;
   }
 }
 #main-photographer-description .main-photographer .container p .main-tagline {
@@ -747,7 +799,17 @@ body:focus {
 }
 @media screen and (max-width: 700px) {
   #main-photographer-description .main-photographer .container p .main-tagline {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 550px) {
+  #main-photographer-description .main-photographer .container p .main-tagline {
     font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 440px) {
+  #main-photographer-description .main-photographer .container p .main-tagline {
+    font-size: 0.6em;
   }
 }
 #main-photographer-description .main-photographer .container p .main-price {
@@ -760,7 +822,17 @@ body:focus {
 }
 @media screen and (max-width: 700px) {
   #main-photographer-description .main-photographer .container p .main-price {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 550px) {
+  #main-photographer-description .main-photographer .container p .main-price {
     font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 440px) {
+  #main-photographer-description .main-photographer .container p .main-price {
+    font-size: 0.6em;
   }
 }
 #main-photographer-description .main-photographer .container .tag-container {
