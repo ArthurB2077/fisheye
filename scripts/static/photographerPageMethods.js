@@ -81,6 +81,5 @@ const showMedia = (index) => {
   if (index < 0) {
     mediaIndex = medias.length - 1
   }
-  console.log(mediaIndex)
   medias[mediaIndex % medias.length].style.display = 'block'
 }

@@ -198,16 +198,19 @@ class MediaFactory {
                   document.getElementById('item-date').setAttribute('data-selected', 'true')
                   document.getElementById('item-name').setAttribute('data-selected', 'false')
                   document.getElementById('top-list-item').setAttribute('data-selected', 'false')
+                  filter.filterSlide('data-date')
                 } else if (item.innerHTML === 'Titre') {
                   filter.filterMedia('data-name')
                   document.getElementById('item-date').setAttribute('data-selected', 'false')
                   document.getElementById('item-name').setAttribute('data-selected', 'true')
                   document.getElementById('top-list-item').setAttribute('data-selected', 'false')
+                  filter.filterSlide('data-name')
                 } else {
                   filter.filterMedia('data-pop')
                   document.getElementById('item-date').setAttribute('data-selected', 'false')
                   document.getElementById('item-name').setAttribute('data-selected', 'false')
                   document.getElementById('top-list-item').setAttribute('data-selected', 'true')
+                  filter.filterSlide('data-pop')
                 }
                 if (document.getElementById('item-date').getAttribute('data-selected') === 'true') {
                   Array.from(document.getElementsByClassName('media')).forEach(med => {
@@ -364,25 +367,7 @@ class MediaFactory {
           })
           const factorLightbox = new LightboxFactory()
           factorLightbox.createLightbox(mediaData)
-
-          Array.from(document.getElementsByClassName('media')).forEach(med => {
-            med.addEventListener('click', () => {
-              Array.from(document.getElementsByClassName('item')).forEach(item => {
-                if (item.getAttribute('data-selected') === 'true') {
-                  const filter = new DisplayMediaManager()
-                  if (item.innerText === 'Date') {
-                    filter.filterSlide('data-date')
-                  } else if (item.innerText === 'Titre') {
-                    filter.filterSlide('data-name')
-                  } else if (item.innerText === 'Popularité') {
-                    filter.filterSlide('data-pop')
-                  }
-                }
-              })
-            })
-          })
         })
-
         .catch((error) => {
           console.log(error)
         })
