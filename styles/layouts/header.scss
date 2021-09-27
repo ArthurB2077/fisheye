@@ -21,6 +21,14 @@
   }
   .header-content-button {
     text-decoration: none;
+    border: 3px solid transparent;
+    padding: 2px;
+    &:focus {
+      outline: none;
+      border: 3px solid #D51010;
+      border-radius: 5px;
+      padding: 2px;
+    }
     @include media-queries(tablette) {
       margin-top: 3rem;
     }

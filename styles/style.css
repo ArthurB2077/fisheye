@@ -206,6 +206,14 @@ body {
 }
 .header-banner .header-content-button {
   text-decoration: none;
+  border: 3px solid transparent;
+  padding: 2px;
+}
+.header-banner .header-content-button:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
+  padding: 2px;
 }
 @media all and (min-width: 600px) and (max-width: 1399px) {
   .header-banner .header-content-button {
@@ -354,6 +362,11 @@ body {
 }
 .tag:hover, .tag-nav:hover {
   cursor: pointer;
+}
+.tag:focus, .tag-nav:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  padding: 1px 8px 1px 8px;
 }
 @media screen and (max-width: 700px) {
   .tag, .tag-nav {
@@ -603,6 +616,14 @@ body {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+  border: 3px solid transparent;
+  padding: 2px;
+}
+.main-photographers a:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
+  padding: 2px;
 }
 .main-photographers a img {
   border-radius: 50%;
