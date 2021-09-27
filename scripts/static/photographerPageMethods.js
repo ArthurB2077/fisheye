@@ -48,6 +48,7 @@ const manageMenu = () => {
   if (document.getElementById('menu-arrow').className === 'menu-close') {
     document.getElementById('menu-arrow').classList.replace('menu-close', 'menu-open')
     document.getElementById('menu-arrow').removeAttribute('style')
+    document.getElementById('menu-arrow').setAttribute('aria-label', 'Menu déplié')
     document.getElementById('arrow-svg').style.animation = 'rotate-arrow 1s forwards'
     document.getElementById('menu-list-container').removeAttribute('style')
     document.getElementById('menu-list-container').style.animation = 'open-bg 1s forwards'
@@ -61,6 +62,7 @@ const manageMenu = () => {
   } else {
     document.getElementById('menu-arrow').classList.replace('menu-open', 'menu-close')
     document.getElementById('menu-arrow').removeAttribute('style')
+    document.getElementById('menu-arrow').setAttribute('aria-label', 'Menu replié')
     document.getElementById('arrow-svg').style.animation = 'rotate-arrow-back 1s forwards'
     document.getElementById('menu-list-container').removeAttribute('style')
     document.getElementById('menu-list-container').style.animation = 'close-bg 1s forwards'
@@ -79,6 +81,13 @@ const openLightbox = () => {
   document.body.style.overflowY = 'hidden'
 }
 
+const openLightboxHandler = (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault()
+    openLightbox()
+  }
+}
+
 const closeLightbox = () => {
   document.getElementById('lightbox-container').style.display = 'none'
   Array.from(document.getElementById('lightbox-content').children).forEach(child => {
@@ -87,6 +96,13 @@ const closeLightbox = () => {
     }
   })
   document.body.removeAttribute('style')
+}
+
+const closeLightboxHandler = (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault()
+    closeLightbox()
+  }
 }
 
 let mediaIndex = 1

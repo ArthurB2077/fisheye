@@ -145,11 +145,11 @@ class MediaFactory {
                 src: `http://localhost:3000/api/file/${media.image}`,
                 alt: `${media.title}`
               })
-              mediaElement = factorDomElement.createDOMElement('article', { role: 'link', 'aria-label': 'Photo', 'aria-describedby': 'media-title', class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}`, tabIndex: '4' }, img, mediaDescription)
+              mediaElement = factorDomElement.createDOMElement('article', { role: 'img', 'aria-label': `Photo ${media.title}`, class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}`, tabIndex: '4' }, img, mediaDescription)
             } else {
               const source = factorDomElement.createDOMElement('source', { src: `http://localhost:3000/api/file/${media.video}`, type: 'video/mp4' })
               video = factorDomElement.createDOMElement('video', { class: 'hover-shadow cursor', autoplay: 'true' }, source)
-              mediaElement = factorDomElement.createDOMElement('article', { role: 'link', 'aria-describedby': 'media-title', 'aria-label': 'Photo', class: 'media hover-shadow cursor', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}`, tabIndex: '4' }, video, mediaDescription)
+              mediaElement = factorDomElement.createDOMElement('article', { 'aria-label': `Vidéo ${media.title}`, class: 'media hover-shadow cursor', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}`, tabIndex: '4' }, video, mediaDescription)
             }
             /**
              * FR: Crée une variable qui retournera un élément contenant soit une vidéo soit une photo en fonction du nom de
@@ -248,7 +248,6 @@ class MediaFactory {
              */
           })
           Array.from(document.getElementsByClassName('media-icon')).forEach(icon => {
-            console.log(icon)
             icon.addEventListener('click', () => {
               if (icon.classList.contains('not-liked')) {
                 icon.children[0].style.fill = '#901C1C'
@@ -379,6 +378,7 @@ class MediaFactory {
           Array.from(document.getElementById('gallery').children).forEach(med => {
             index++
             med.children[0].setAttribute('onclick', `openLightbox();currentMedia(${index});`)
+            med.children[0].setAttribute('onkeyup', 'openLightboxHandler(event);')
             if (med.children[0].getAttribute('src') === null) {
               mediaData.push({ src: med.children[0].children[0].getAttribute('src'), 'data-pop': med.getAttribute('data-pop'), 'data-date': med.getAttribute('data-date'), 'data-name': med.getAttribute('data-name') })
             } else {

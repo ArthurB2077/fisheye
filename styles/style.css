@@ -397,6 +397,11 @@ body {
 .tag-selected:hover {
   cursor: pointer;
 }
+.tag-selected:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  padding: 1px 8px 1px 8px;
+}
 
 @keyframes fadein {
   from {
