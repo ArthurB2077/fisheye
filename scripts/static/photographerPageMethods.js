@@ -15,6 +15,27 @@ const closeModal = () => {
   document.getElementById('responsive-contact').removeAttribute('style')
 }
 
+/**
+ * FR : Active le close modal par la touche entrer
+ *
+ * EN: Activates the action button with the enter key.
+ *
+ * @param {KeyboardEvent} event
+ */
+const closeKeyUpHandler = (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault()
+    closeModal()
+  }
+}
+
+const filterKeyUpHandler = (event) => {
+  if (event.keyCode === 13) {
+    event.preventDefault()
+    manageMenu()
+  }
+}
+
 // eslint-disable-next-line no-unused-vars
 const logData = () => {
   for (let i = 0; i < event.target.form.length - 1; i++) {
@@ -32,8 +53,10 @@ const manageMenu = () => {
     document.getElementById('menu-list-container').style.animation = 'open-bg 1s forwards'
     Array.from(document.getElementsByClassName('list-item')).forEach(item => {
       item.removeAttribute('style')
-      // item.style.display = 'list-item'
       item.style.animation = 'open-items 1s forwards'
+    })
+    Array.from(document.getElementsByClassName('item')).forEach(item => {
+      item.setAttribute('tabindex', '1')
     })
   } else {
     document.getElementById('menu-arrow').classList.replace('menu-open', 'menu-close')
@@ -44,6 +67,9 @@ const manageMenu = () => {
     Array.from(document.getElementsByClassName('list-item')).forEach(item => {
       item.removeAttribute('style')
       item.style.animation = 'close-items 1s forwards'
+    })
+    Array.from(document.getElementsByClassName('item')).forEach(item => {
+      item.setAttribute('tabindex', '-1')
     })
   }
 }

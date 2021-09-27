@@ -32,16 +32,18 @@
                 <div aria-label=Formulaire" aria-modal="true" class="modal-form">
                     <div aria-label="Titre du formulaire" class="title">
                         <h2 id="photographer-form-name"></h2>
-                        <svg id="modal-close" class="close" viewBox='0 0 480 520' onclick="closeModal();" tabindex="0">
-                            <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
-                                    c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
-                                    c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
-                                    L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
-                                    c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
-                                    c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
-                                    c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"
-                            />
-                        </svg>
+                        <a id="modal-close" onclick="closeModal();" onkeyup="closeKeyUpHandler(event);" tabindex="0" role="button" aria-pressed="false">
+                            <svg class="close" viewBox='0 0 480 520'>
+                                <path d="M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872
+                                        c-5.068-5.076-11.824-7.856-19.036-7.856c-7.2,0-13.956,2.78-19.024,7.856L246.008,191.82L62.048,7.872
+                                        c-5.06-5.076-11.82-7.856-19.028-7.856c-7.2,0-13.96,2.78-19.02,7.856L7.872,23.988c-10.496,10.496-10.496,27.568,0,38.052
+                                        L191.828,246L7.872,429.952c-5.064,5.072-7.852,11.828-7.852,19.032c0,7.204,2.788,13.96,7.852,19.028l16.124,16.116
+                                        c5.06,5.072,11.824,7.856,19.02,7.856c7.208,0,13.968-2.784,19.028-7.856l183.96-183.952l183.952,183.952
+                                        c5.068,5.072,11.824,7.856,19.024,7.856h0.008c7.204,0,13.96-2.784,19.028-7.856l16.12-16.116
+                                        c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z"
+                                />
+                        </svg></a>
+
                     </div>
                     <form aria-describedby="photographer-form-name" action="" method="post" class="">
                     <div class="form-fields">
@@ -68,11 +70,11 @@
             </section>
             <section aria-label="Filtre photos" id="media-filter">
                 <div aria-label="Titre du filtre" id="filter-title">Trier par</div>
-                <div aria-describedby="filter-title" role="button" id="filter-menu" tabindex="1">
+                <div aria-describedby="filter-title" role="button" id="filter-menu" >
                     <ul id="menu-list-container" style="">
-                        <li id="top-list-item" class="item">
+                        <li id="top-list-item" class="item" tabindex="1">
                             <span>Popularité</span>
-                            <span id="menu-arrow" class="menu-close" onclick="manageMenu()" style="">
+                            <span id="menu-arrow" class="menu-close" onclick="manageMenu()" style="" tabindex="1" onkeyup="filterKeyUpHandler(event);">
                               <svg id="arrow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 491.996 491.996">
                                 <path d="M484.132,124.986l-16.116-16.228c-5.072-5.068-11.82-7.86-19.032-7.86c-7.208,0-13.964,2.792-19.036,7.86l-183.84,183.848
 			                            L62.056,108.554c-5.064-5.068-11.82-7.856-19.028-7.856s-13.968,2.788-19.036,7.856l-16.12,16.128
@@ -83,8 +85,8 @@
                             </svg>
                             </span>
                         </li>
-                        <li id="item-date" class="list-item item" style="">Date</li>
-                        <li id="item-name" class="list-item item" style="">Titre</li>
+                        <li id="item-date" class="list-item item" style="" tabindex="-1">Date</li>
+                        <li id="item-name" class="list-item item" style="" tabindex="-1">Titre</li>
                     </ul>
                 </div>
             </section>

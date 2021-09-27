@@ -2,9 +2,6 @@
 body {
   font-family: "DM Sans", sans-serif;
 }
-body:focus {
-  border: 3px solid red;
-}
 
 @keyframes fadein {
   from {
@@ -289,6 +286,18 @@ body:focus {
 .header-phographer {
   margin-left: 5%;
   margin-top: 2.5%;
+}
+.header-phographer a {
+  display: inline-block;
+  height: 50px !important;
+  border: 3px solid transparent;
+  padding: 1px;
+}
+.header-phographer a:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  padding: 1px;
+  border-radius: 5px;
 }
 @media screen and (max-width: 700px) {
   .header-phographer {
@@ -861,6 +870,12 @@ body:focus {
   margin-top: 0.5em;
   cursor: pointer;
 }
+#main-photographer-description .main-photographer .container #contact:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  padding: 3px;
+  border-radius: 5px;
+}
 @media screen and (max-width: 1150px) {
   #main-photographer-description .main-photographer .container #contact {
     display: none;
@@ -921,6 +936,9 @@ body:focus {
   margin-top: 0;
   margin-bottom: 0.5em;
 }
+.bg-modal .modal-form .title #modal-close {
+  height: 32px;
+}
 .bg-modal .modal-form .title .close {
   display: inline-flex;
   position: relative;
@@ -957,11 +975,16 @@ body:focus {
 .media {
   height: 400px;
   width: 500px;
-  background: black;
   border-radius: 10px;
 }
 .media:hover {
   cursor: pointer;
+}
+.media:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
+  padding: 2px;
 }
 @media screen and (max-width: 1150px) {
   .media {
@@ -1061,9 +1084,22 @@ body:focus {
   height: 30%;
 }
 #media-filter #filter-menu ul #top-list-item {
-  border: none;
   display: flex;
   justify-content: space-between;
+  border: 3px solid transparent;
+}
+#media-filter #filter-menu ul #top-list-item:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
+}
+#media-filter #filter-menu ul #top-list-item .menu-close, #media-filter #filter-menu ul #top-list-item .menu-open {
+  border: 3px solid transparent;
+}
+#media-filter #filter-menu ul #top-list-item .menu-close:focus, #media-filter #filter-menu ul #top-list-item .menu-open:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
 }
 #media-filter #filter-menu ul #top-list-item svg {
   width: 20px;
@@ -1080,6 +1116,11 @@ body:focus {
   font-style: normal;
   font-weight: 700;
   border-top: 1px solid white;
+}
+#media-filter #filter-menu ul li:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
 }
 #media-filter #filter-menu ul .list-item {
   opacity: 0;

@@ -191,37 +191,47 @@ class MediaFactory {
              * from the DOM to information allowing filtering. This method thus avoids renewing a call
              * to the API and regenerate the same information twice. They are managing in the DisplayMediaManager factory.
              */
+            const sortMedia = (item) => {
+              if (item.innerHTML === 'Date') {
+                filter.filterMedia('data-date')
+                document.getElementById('item-date').setAttribute('data-selected', 'true')
+                document.getElementById('item-name').setAttribute('data-selected', 'false')
+                document.getElementById('top-list-item').setAttribute('data-selected', 'false')
+                filter.filterSlide('data-date')
+              } else if (item.innerHTML === 'Titre') {
+                filter.filterMedia('data-name')
+                document.getElementById('item-date').setAttribute('data-selected', 'false')
+                document.getElementById('item-name').setAttribute('data-selected', 'true')
+                document.getElementById('top-list-item').setAttribute('data-selected', 'false')
+                filter.filterSlide('data-name')
+              } else {
+                filter.filterMedia('data-pop')
+                document.getElementById('item-date').setAttribute('data-selected', 'false')
+                document.getElementById('item-name').setAttribute('data-selected', 'false')
+                document.getElementById('top-list-item').setAttribute('data-selected', 'true')
+                filter.filterSlide('data-pop')
+              }
+              if (document.getElementById('item-date').getAttribute('data-selected') === 'true') {
+                Array.from(document.getElementsByClassName('media')).forEach(med => {
+                  med.children[1].children[0].innerHTML = med.getAttribute('data-date')
+                })
+              } else {
+                Array.from(document.getElementsByClassName('media')).forEach(med => {
+                  med.children[1].children[0].innerHTML = med.getAttribute('data-name')
+                })
+              }
+            }
             Array.from(document.getElementsByClassName('item')).forEach(item => {
-              item.addEventListener('click', () => {
-                if (item.innerHTML === 'Date') {
-                  filter.filterMedia('data-date')
-                  document.getElementById('item-date').setAttribute('data-selected', 'true')
-                  document.getElementById('item-name').setAttribute('data-selected', 'false')
-                  document.getElementById('top-list-item').setAttribute('data-selected', 'false')
-                  filter.filterSlide('data-date')
-                } else if (item.innerHTML === 'Titre') {
-                  filter.filterMedia('data-name')
-                  document.getElementById('item-date').setAttribute('data-selected', 'false')
-                  document.getElementById('item-name').setAttribute('data-selected', 'true')
-                  document.getElementById('top-list-item').setAttribute('data-selected', 'false')
-                  filter.filterSlide('data-name')
-                } else {
-                  filter.filterMedia('data-pop')
-                  document.getElementById('item-date').setAttribute('data-selected', 'false')
-                  document.getElementById('item-name').setAttribute('data-selected', 'false')
-                  document.getElementById('top-list-item').setAttribute('data-selected', 'true')
-                  filter.filterSlide('data-pop')
+              item.addEventListener('click', () => sortMedia(item))
+            })
+            Array.from(document.getElementsByClassName('item')).forEach(item => {
+              item.addEventListener('keyup', (event) => {
+                if (event.keyCode === 13) {
+                  event.preventDefault()
+                  sortMedia(item)
                 }
-                if (document.getElementById('item-date').getAttribute('data-selected') === 'true') {
-                  Array.from(document.getElementsByClassName('media')).forEach(med => {
-                    med.children[1].children[0].innerHTML = med.getAttribute('data-date')
-                  })
-                } else {
-                  Array.from(document.getElementsByClassName('media')).forEach(med => {
-                    med.children[1].children[0].innerHTML = med.getAttribute('data-name')
-                  })
-                }
-              })
+              }
+              )
             })
             /**
              * FR: Un écouteur d'évènements vérifie les clicks reçu par chacun des icône likes de la page.

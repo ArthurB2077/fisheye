@@ -3,10 +3,15 @@
 .media {
   height: 400px;
   width: 500px;
-  background: black;
   border-radius: 10px;
   &:hover {
     cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+    border: 3px solid #D51010;
+    border-radius: 5px;
+    padding: 2px;
   }
   @media screen and (max-width: 1150px){
     width: auto;

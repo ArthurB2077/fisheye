@@ -241,6 +241,12 @@
         margin-left: 4em;
         margin-top: 0.5em;
         cursor: pointer;
+        &:focus {
+          outline: none;
+          border: 3px solid #D51010;
+          padding: 3px;
+          border-radius: 5px;
+        }
         @media screen and (max-width: 1150px) {
           display: none;
         }

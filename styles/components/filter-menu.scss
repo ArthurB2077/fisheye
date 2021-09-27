@@ -24,9 +24,22 @@
       padding: 0.30em;
       height: 30%;
       #top-list-item {
-        border: none;
         display: flex;
         justify-content: space-between;
+        border: 3px solid transparent;
+        &:focus {
+          outline: none;
+          border: 3px solid #D51010;
+          border-radius: 5px;
+        }
+        .menu-close, .menu-open {
+          border: 3px solid transparent;
+          &:focus {
+            outline: none;
+            border: 3px solid #D51010;
+            border-radius: 5px;
+          }
+        }
         svg {
           width: 20px;
           height: 20px;
@@ -43,6 +56,11 @@
         font-style: normal;
         font-weight: 700;
         border-top: 1px solid white;
+        &:focus {
+          outline: none;
+          border: 3px solid #D51010;
+          border-radius: 5px;
+        }
       }
       .list-item {
         opacity: 0;
