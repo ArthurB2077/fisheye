@@ -27,6 +27,12 @@
       }
       #modal-close {
         height: 32px;
+        &:focus {
+          outline: none;
+          border: 3px solid #D51010;
+          border-radius: 5px;
+          padding: 2px;
+        }
       }
       .close {
         display: inline-flex;
@@ -51,11 +57,23 @@
       input {
         border-radius: 5px;
         font-size: 30px;
+        &:focus {
+          outline: none;
+          border: 3px solid #D51010;
+          border-radius: 5px;
+          padding: 2px;
+        }
       }
       textarea {
         border-radius: 5px;
         height: 5em;
         font-size: 30px;
+        &:focus {
+          outline: none;
+          border: 3px solid #D51010;
+          border-radius: 5px;
+          padding: 2px;
+        }
       }
     }
     .form-submit {

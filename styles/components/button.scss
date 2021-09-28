@@ -10,4 +10,9 @@
   border-radius: 5px;
   width: 10em;
   cursor: pointer;
+  &:focus {
+    outline: none;
+    border: 3px solid #D51010;
+  }
+
 }

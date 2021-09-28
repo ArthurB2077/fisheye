@@ -933,6 +933,10 @@ body {
   width: 10em;
   cursor: pointer;
 }
+.button:focus {
+  outline: none;
+  border: 3px solid #D51010;
+}
 
 .bg-modal {
   display: none;
@@ -965,6 +969,12 @@ body {
 .bg-modal .modal-form .title #modal-close {
   height: 32px;
 }
+.bg-modal .modal-form .title #modal-close:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
+  padding: 2px;
+}
 .bg-modal .modal-form .title .close {
   display: inline-flex;
   position: relative;
@@ -988,10 +998,22 @@ body {
   border-radius: 5px;
   font-size: 30px;
 }
+.bg-modal .modal-form .form-fields input:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
+  padding: 2px;
+}
 .bg-modal .modal-form .form-fields textarea {
   border-radius: 5px;
   height: 5em;
   font-size: 30px;
+}
+.bg-modal .modal-form .form-fields textarea:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
+  padding: 2px;
 }
 .bg-modal .modal-form .form-submit {
   margin-top: 2em;
