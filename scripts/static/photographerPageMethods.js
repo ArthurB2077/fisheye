@@ -77,12 +77,16 @@ const manageMenu = () => {
 }
 
 const openLightbox = () => {
+  document.querySelectorAll("[tabindex = '0']").forEach(el => {
+    el.setAttribute('tabindex', '-10')
+  })
   document.querySelectorAll("[tabindex = '1']").forEach(el => {
     el.setAttribute('tabindex', '-1')
   })
   document.querySelectorAll("[tabindex = '4']").forEach(el => {
     el.setAttribute('tabindex', '-4')
   })
+  document.getElementById('lightbox-content').setAttribute('tabindex', '-2')
   document.getElementById('prev-button').setAttribute('tabindex', '1')
   document.getElementById('next-button').setAttribute('tabindex', '1')
   document.getElementById('close-button').setAttribute('tabindex', '1')
@@ -98,6 +102,9 @@ const openLightboxHandler = (event) => {
 }
 
 const closeLightbox = () => {
+  document.querySelectorAll("[tabindex = '-10']").forEach(el => {
+    el.setAttribute('tabindex', '0')
+  })
   document.querySelectorAll("[tabindex = '-1']").forEach(el => {
     el.setAttribute('tabindex', '1')
   })
