@@ -123,7 +123,7 @@ class MediaFactory {
                   'c-52.072,56.166-52.072,142.968,0,199.134l187.358,197.581c6.482,6.843,17.284,7.136,24.127,0.654\n' +
                   'c0.224-0.212,0.442-0.43,0.654-0.654l187.29-197.581C490.551,201.567,490.551,114.77,438.482,58.61z'
             })
-            const svg = factorDomElement.createDOMElement('svg', { class: 'media-icon not-liked', viewBox: '0 0 480 520' }, path)
+            const svg = factorDomElement.createDOMElement('svg', { class: 'media-icon not-liked', viewBox: '0 0 480 520', tabindex: '4', role: 'button' }, path)
             const span = factorDomElement.createDOMElement('span', {}, `${media.likes}`)
             const mediaLikeContainer = factorDomElement.createDOMElement('div', { class: 'media-like-container' }, span, svg)
             /**
@@ -247,25 +247,36 @@ class MediaFactory {
              * receive a like or not.
              */
           })
+          const likesIncrement = (icon) => {
+            if (icon.classList.contains('not-liked')) {
+              icon.children[0].style.fill = '#901C1C'
+              icon.classList.remove('not-liked')
+              icon.classList.add('liked')
+              const oldLikesValue = parseInt(icon.parentNode.children[0].innerHTML)
+              newLikesNumber = oldLikesValue + 1
+              icon.parentNode.children[0].innerHTML = `${newLikesNumber}`
+            } else if (icon.classList.contains('liked')) {
+              icon.children[0].removeAttribute('style')
+              icon.children[0].style.fill = 'transparent'
+              icon.classList.remove('liked')
+              icon.classList.add('not-liked')
+              const oldLikesValue = parseInt(icon.parentNode.children[0].innerHTML)
+              newLikesNumber = oldLikesValue - 1
+              icon.parentNode.children[0].innerHTML = `${newLikesNumber}`
+            }
+          }
+          const handleLikesIncrement = (event, icon) => {
+            if (event.keyCode === 13) {
+              event.stopPropagation()
+              event.preventDefault()
+              likesIncrement(icon)
+            }
+          }
           Array.from(document.getElementsByClassName('media-icon')).forEach(icon => {
             icon.addEventListener('click', () => {
-              if (icon.classList.contains('not-liked')) {
-                icon.children[0].style.fill = '#901C1C'
-                icon.classList.remove('not-liked')
-                icon.classList.add('liked')
-                const oldLikesValue = parseInt(icon.parentNode.children[0].innerHTML)
-                newLikesNumber = oldLikesValue + 1
-                icon.parentNode.children[0].innerHTML = `${newLikesNumber}`
-              } else if (icon.classList.contains('liked')) {
-                icon.children[0].removeAttribute('style')
-                icon.children[0].style.fill = 'transparent'
-                icon.classList.remove('liked')
-                icon.classList.add('not-liked')
-                const oldLikesValue = parseInt(icon.parentNode.children[0].innerHTML)
-                newLikesNumber = oldLikesValue - 1
-                icon.parentNode.children[0].innerHTML = `${newLikesNumber}`
-              }
+              likesIncrement(icon)
             })
+            icon.addEventListener('keyup', (event) => handleLikesIncrement(event, icon))
           })
           /**
            * FR: Appelle de DOMElementFactory afin de créer le panneau indiquant le nombre total de likes et le prix

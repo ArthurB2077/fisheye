@@ -1065,6 +1065,12 @@ body {
   width: 30px;
   height: 30px;
 }
+.media .media-description .media-like-container svg:focus {
+  outline: none;
+  border: 3px solid #D51010;
+  border-radius: 5px;
+  padding: 2px;
+}
 @media screen and (max-width: 700px) {
   .media .media-description .media-like-container svg {
     width: 20px;
