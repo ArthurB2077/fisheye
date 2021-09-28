@@ -26,7 +26,7 @@ class LightboxFactory {
         'l16.124-16.12c10.492-10.492,10.492-27.572,0-38.06L198.608,246.104z'
       })
       const svgLeftArrow = factorDomElement.createDOMElement('svg', { width: '24px', height: '24px', viewBox: '0 0 480 520', fill: 'white' }, pathLeftArrow)
-      const prev = factorDomElement.createDOMElement('a', { class: 'prev', onclick: 'changeSlide(-1);', tabindex: '0' }, svgLeftArrow)
+      const prev = factorDomElement.createDOMElement('a', { role: 'button', id: 'prev-button', class: 'prev', onclick: 'changeSlide(-1);', onkeyup: 'handleChangeSlide(event, -1);', tabindex: '0' }, svgLeftArrow)
 
       const pathRightArrow = factorDomElement.createDOMElement('path', {
         d: 'M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12\n' +
@@ -35,7 +35,7 @@ class LightboxFactory {
         'c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z'
       })
       const svgRightArrow = factorDomElement.createDOMElement('svg', { width: '24px', height: '24px', viewBox: '0 0 480 520', fill: 'white' }, pathRightArrow)
-      const next = factorDomElement.createDOMElement('a', { class: 'next', onclick: 'changeSlide(1);', tabindex: '0' }, svgRightArrow)
+      const next = factorDomElement.createDOMElement('a', { role: 'button', id: 'next-button', class: 'next', onclick: 'changeSlide(1);', onkeyup: 'handleChangeSlide(event, 1);', tabindex: '0' }, svgRightArrow)
 
       const pathClose = factorDomElement.createDOMElement('path', {
         d: 'M300.188,246L484.14,62.04c5.06-5.064,7.852-11.82,7.86-19.024c0-7.208-2.792-13.972-7.86-19.028L468.02,7.872\n' +
@@ -47,7 +47,7 @@ class LightboxFactory {
         'c5.06-5.064,7.852-11.824,7.852-19.028c0-7.204-2.792-13.96-7.852-19.028L300.188,246z'
       })
       const svgClose = factorDomElement.createDOMElement('svg', { width: '24px', height: '24px', viewBox: '0 0 480 520' }, pathClose)
-      const closeButton = factorDomElement.createDOMElement('a', { class: 'close cursor', onclick: 'closeLightbox(event)', onkeyup: 'closeLightboxHandler();', tabindex: '0' }, svgClose)
+      const closeButton = factorDomElement.createDOMElement('a', { role: 'button', id: 'close-button', class: 'close cursor', onclick: 'closeLightbox(event)', onkeyup: 'closeLightboxHandler(event);', tabindex: '0' }, svgClose)
       const lightboxContent = factorDomElement.createDOMElement('div', { id: 'lightbox-content' })
       slides.forEach(slide => {
         lightboxContent.appendChild(slide)

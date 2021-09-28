@@ -378,7 +378,7 @@ class MediaFactory {
           Array.from(document.getElementById('gallery').children).forEach(med => {
             index++
             med.children[0].setAttribute('onclick', `openLightbox();currentMedia(${index});`)
-            med.setAttribute('onkeyup', 'openLightboxHandler(event);')
+            med.setAttribute('onkeyup', `openLightboxHandler(event);currentMedia(${index});`)
             if (med.children[0].getAttribute('src') === null) {
               mediaData.push({ src: med.children[0].children[0].getAttribute('src'), 'data-pop': med.getAttribute('data-pop'), 'data-date': med.getAttribute('data-date'), 'data-name': med.getAttribute('data-name') })
             } else {

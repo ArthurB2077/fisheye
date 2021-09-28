@@ -77,6 +77,15 @@ const manageMenu = () => {
 }
 
 const openLightbox = () => {
+  document.querySelectorAll("[tabindex = '1']").forEach(el => {
+    el.setAttribute('tabindex', '-1')
+  })
+  document.querySelectorAll("[tabindex = '4']").forEach(el => {
+    el.setAttribute('tabindex', '-4')
+  })
+  document.getElementById('prev-button').setAttribute('tabindex', '1')
+  document.getElementById('next-button').setAttribute('tabindex', '1')
+  document.getElementById('close-button').setAttribute('tabindex', '1')
   document.getElementById('lightbox-container').style.display = 'block'
   document.body.style.overflowY = 'hidden'
 }
@@ -89,6 +98,15 @@ const openLightboxHandler = (event) => {
 }
 
 const closeLightbox = () => {
+  document.querySelectorAll("[tabindex = '-1']").forEach(el => {
+    el.setAttribute('tabindex', '1')
+  })
+  document.querySelectorAll("[tabindex = '-4']").forEach(el => {
+    el.setAttribute('tabindex', '4')
+  })
+  document.getElementById('prev-button').setAttribute('tabindex', '0')
+  document.getElementById('next-button').setAttribute('tabindex', '0')
+  document.getElementById('close-button').setAttribute('tabindex', '0')
   document.getElementById('lightbox-container').style.display = 'none'
   Array.from(document.getElementById('lightbox-content').children).forEach(child => {
     if (child.tagName !== 'A') {
@@ -113,6 +131,13 @@ const currentMedia = (index) => {
 
 const changeSlide = (index) => {
   showMedia(mediaIndex += index)
+}
+
+const handleChangeSlide = (event, index) => {
+  if (event.keyCode === 13) {
+    event.preventDefault()
+    changeSlide(index)
+  }
 }
 
 const showMedia = (index) => {
