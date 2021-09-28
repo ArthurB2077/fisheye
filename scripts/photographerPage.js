@@ -14,6 +14,5 @@ document.getElementById('filter-menu').addEventListener('click', () => {
   Array.from(document.getElementById('gallery').children).forEach(med => {
     index++
     med.children[0].setAttribute('onclick', `openLightbox();currentMedia(${index});`)
-    med.children[0].setAttribute('onkeyup', 'openLightboxHandler(event);')
   })
 })
