@@ -148,7 +148,7 @@ class MediaFactory {
               mediaElement = factorDomElement.createDOMElement('article', { role: 'img', 'aria-label': `Photo ${media.title}`, class: 'media', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}`, tabIndex: '4' }, img, mediaDescription)
             } else {
               const source = factorDomElement.createDOMElement('source', { src: `http://localhost:3000/api/file/${media.video}`, type: 'video/mp4' })
-              video = factorDomElement.createDOMElement('video', { class: 'hover-shadow cursor', autoplay: 'true' }, source)
+              video = factorDomElement.createDOMElement('video', { class: 'hover-shadow cursor', autoplay: 'true', tabindex: '-1' }, source)
               mediaElement = factorDomElement.createDOMElement('article', { 'aria-label': `Vidéo ${media.title}`, class: 'media hover-shadow cursor', 'data-pop': `${media.likes}`, 'data-date': `${media.date}`, 'data-name': `${media.title}`, tabIndex: '4' }, video, mediaDescription)
             }
             /**

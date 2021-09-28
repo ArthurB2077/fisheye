@@ -13,6 +13,7 @@ const closeModal = () => {
     modal.style.display = 'none'
   })
   document.getElementById('responsive-contact').removeAttribute('style')
+  document.getElementById('contact').focus()
 }
 
 /**
@@ -121,6 +122,7 @@ const closeLightbox = () => {
     }
   })
   document.body.removeAttribute('style')
+  document.getElementById('gallery').children[0].focus()
 }
 
 const closeLightboxHandler = (event) => {
