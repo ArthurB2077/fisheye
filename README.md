@@ -12,7 +12,7 @@ You can find the Figma model here: https://www.figma.com/file/pt8xJxC1QffW4HX16Q
 
 ### Clone the project:
 ```bash
-git clone https://github.com/ArthurBQ/ArthurBequie_06_20082021.git
+git clone git@github.com:ArthurB2077/fisheye.git
 ```
 
 ### Install dependencies:
