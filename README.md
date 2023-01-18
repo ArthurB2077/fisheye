@@ -4,7 +4,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-This project create from sratch a website of photographic galleries.
+This project create from sratch a photographic gallery website.
 
 Accessibility is the heart of this project and the site meets all the expectations that may arise from it.
 
