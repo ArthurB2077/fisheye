@@ -33,8 +33,8 @@ All the media will be loaded from the database and the structure of the website 
 Be aware that your localhost port 3000 must be available.
 
 Made with:
-Webstorm - Text editor
-SCSS - CSS Preprocessor
-EsLint - JS Linter 
+Webstorm - Text editor \
+SCSS - CSS Preprocessor \
+EsLint - JS Linter \
 
 Author: Arthur B
