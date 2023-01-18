@@ -10,22 +10,31 @@ Accessibility is the heart of this project and the site meets all the expectatio
 For JavaScript code, the Factory Design Pattern method is at the center of the project.
 You can find the Figma model here: https://www.figma.com/file/pt8xJxC1QffW4HX16QhGZJ/UI-Design-FishEye-FR
 
-Start-up:
-user@machine: ~/Desktop$ cd monDossier/OuInstaller/leProjet
-user@machine: ~/Desktop/monDossier/OuInstaller/leProjet$ git clone https://github.com/ArthurBQ/ArthurBequie_06_20082021.git
-user@machine: ~/Desktop/monDossier/OuInstaller/leProjet$ cd /ArthurBequie_06_20082021
-user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021$ npm install
-user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021$ cd /backend
-user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021/backend$ npm install
-user@machine: ~/Desktop/monDossier/OuInstaller/leProjet/ArthurBequie_06_20082021/backend$ nodemon
+### Clone the project:
+```bash
+git clone https://github.com/ArthurBQ/ArthurBequie_06_20082021.git
+```
+
+### Install dependencies:
+```bash
+cd fisheye && npm install
+```
+```bash
+cd backend && npm install
+```
+
+### Start the seerver:
+```bash
+nodemon
+```
 
 After that the backend is launched and you could open an html page of the project in a web browser.
-All the media will be loaded from the database and the structure of the website will be dynamically created
-Attention your port 3000 must be available !!
+All the media will be loaded from the database and the structure of the website will be dynamically created.
+Be aware that your port 3000 must be available.
 
 Made with:
 Webstorm - Text editor
-Scss.css - CSS Framework (front-end)
+Scss.css - CSS Framework
 EsLint - Linter JS
 
 Authors
