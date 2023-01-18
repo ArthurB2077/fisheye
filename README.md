@@ -32,7 +32,7 @@ After that the backend is launched and you could open the index.html in your bro
 All the media will be loaded from the database and the structure of the website will be rendered.
 Be aware that your localhost port 3000 must be available.
 
-Made with:
+Made with: \
 Webstorm - Text editor \
 SCSS - CSS Preprocessor \
 EsLint - JS Linter
