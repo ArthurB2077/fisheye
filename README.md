@@ -38,4 +38,4 @@ Be aware that your localhost port 3000 must be available.
 
 Made with: Javascript, EsLint - JS Linter, SCSS - CSS Preprocessor, Webstorm - Text editor
 
-Author: Arthur B
+Author:  Arthur B
