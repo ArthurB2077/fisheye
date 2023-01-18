@@ -10,7 +10,8 @@ Accessibility is the heart of this project and the site meets all the expectatio
 
 For JavaScript code, the Factory Design Pattern method is at the center of the project.
 
-You can find the Figma model here: https://www.figma.com/file/pt8xJxC1QffW4HX16QhGZJ/UI-Design-FishEye-FR
+You can find the Figma model here: \
+https://www.figma.com/file/pt8xJxC1QffW4HX16QhGZJ/UI-Design-FishEye-FR
 
 ### Clone the project:
 ```bash
