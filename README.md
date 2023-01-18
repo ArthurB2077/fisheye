@@ -23,23 +23,18 @@ cd fisheye && npm install
 cd backend && npm install
 ```
 
-### Start the seerver:
+### Start the server:
 ```bash
 nodemon
 ```
 
-After that the backend is launched and you could open an html page of the project in a web browser.
-All the media will be loaded from the database and the structure of the website will be dynamically created.
-Be aware that your port 3000 must be available.
+After that the backend is launched and you could open the index.html in your browser with live-server (vs-code) for instance.
+All the media will be loaded from the database and the structure of the website will be rendered.
+Be aware that your localhost port 3000 must be available.
 
 Made with:
 Webstorm - Text editor
-Scss.css - CSS Framework
-EsLint - Linter JS
+SCSS - CSS Preprocessor
+EsLint - JS Linter 
 
-Authors
-Arthur Béquié 
-En savoir plus sur ce texte source
-Vous devez indiquer le texte source pour obtenir des informations supplémentaires
-Envoyer des commentaires
-Panneaux latéraux
+Author: Arthur B
