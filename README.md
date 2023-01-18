@@ -35,6 +35,6 @@ Be aware that your localhost port 3000 must be available.
 Made with:
 Webstorm - Text editor \
 SCSS - CSS Preprocessor \
-EsLint - JS Linter \
+EsLint - JS Linter
 
 Author: Arthur B
